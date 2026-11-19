@@ -1,0 +1,258 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Crossword Duel</title>
+<link rel="manifest" href="/manifest.webmanifest">
+<link rel="apple-touch-icon" href="/icon-180.png">
+<meta name="theme-color" content="#1F2430">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<style>
+:root{--bg:#F6F6F3;--ink:#16181D;--mut:#4F566A;--card:#fff;--line:#C4C9D4;--blk:#1F2430;--p1:#1F5FC4;--p1t:#DCE8FB;--p2:#B04400;--p2t:#FBE6D6;--hl:#FFF3BF;--cur:#FFD65C;--key:#fff;--keyb:#D5D9E2;--ok:#0B6B4D;--ovl:rgba(22,24,29,.92);
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#12141A;--ink:#ECEEF3;--mut:#A8AFC0;--card:#1C1F27;--line:#3A3F4D;--blk:#05060A;--p1:#8DB9FF;--p1t:#1E3358;--p2:#FFA066;--p2t:#4A2A14;--hl:#3F3A1C;--cur:#7A6414;--key:#2A2E3A;--keyb:#3A3F4D;--ok:#5BD3A5}}
+:root[data-theme="dark"]{--bg:#12141A;--ink:#ECEEF3;--mut:#A8AFC0;--card:#1C1F27;--line:#3A3F4D;--blk:#05060A;--p1:#8DB9FF;--p1t:#1E3358;--p2:#FFA066;--p2t:#4A2A14;--hl:#3F3A1C;--cur:#7A6414;--key:#2A2E3A;--keyb:#3A3F4D;--ok:#5BD3A5}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:system-ui,-apple-system,"Segoe UI",sans-serif;display:flex;justify-content:center}
+#app{width:100%;max-width:460px;padding:12px 12px 14px;display:flex;flex-direction:column;gap:10px;min-height:100vh}
+.scores{display:flex;gap:8px}
+.chip{flex:1;background:var(--card);border-radius:10px;padding:8px 10px;border-bottom:4px solid var(--line)}
+.chip.on{border-bottom-color:currentColor}
+.chip small{display:block;font-size:12px;font-weight:600;color:var(--mut)}
+.chip b{font-size:26px;line-height:1.1}
+.p0{color:var(--p1)}.p1{color:var(--p2)}
+.left{font-size:12px;color:var(--mut);margin-top:2px;letter-spacing:2px}
+#grid{display:grid;grid-template-columns:repeat(9,1fr);border:2px solid var(--blk);width:100%;aspect-ratio:1;background:var(--blk)}
+.c{position:relative;border:1px solid var(--line);background:var(--card);padding:0;font:700 clamp(16px,5.4vw,24px) system-ui,sans-serif;display:flex;align-items:center;justify-content:center;color:var(--ink);border-radius:0;min-width:0}
+.c.k{background:var(--blk);border-color:var(--blk)}
+.c.hl{background:var(--hl)}
+.c.cur{background:var(--cur);outline:2px solid var(--ink);outline-offset:-2px;z-index:1}
+.c.o0{color:var(--p1)}.c.o1{color:var(--p2)}
+.c.s.o0{background:var(--p1t)}.c.s.o1{background:var(--p2t)}
+.c i{position:absolute;top:1px;left:2px;font:600 9px system-ui;font-style:normal;color:var(--mut)}
+#clue{background:var(--card);border-radius:10px;padding:8px 8px 8px 12px;display:flex;align-items:center;gap:8px;min-height:64px;border-left:6px solid currentColor}
+#clue div{flex:1;font-family:Georgia,"Times New Roman",serif;font-size:17px;line-height:1.3;color:var(--ink)}
+#clue small{display:block;font:600 12px system-ui,sans-serif;color:var(--mut)}
+.nav{width:44px;height:44px;border:1px solid var(--line);background:var(--key);color:var(--ink);border-radius:10px;font-size:20px}
+#msg{min-height:20px;font-size:14px;color:var(--mut);text-align:center}
+#kb{margin-top:auto;display:flex;flex-direction:column;gap:6px}
+.row{display:flex;gap:5px;justify-content:center}
+.k{flex:1;min-width:0;height:46px;border:0;border-radius:8px;background:var(--key);color:var(--ink);font:600 18px system-ui,sans-serif;box-shadow:0 1px 0 var(--keyb)}
+.k.w{flex:1.6;background:var(--keyb)}
+#end{height:46px;border:1px solid var(--line);border-radius:10px;background:var(--card);color:var(--ink);font:600 15px system-ui,sans-serif}
+button{cursor:pointer;touch-action:manipulation}
+button:focus-visible{outline:3px solid var(--ink);outline-offset:2px}
+#ovl{position:fixed;inset:0;background:var(--ovl);display:none;align-items:center;justify-content:center;padding:24px;z-index:5}
+#ovl.show{display:flex}
+#box{background:var(--card);color:var(--ink);border-radius:16px;padding:22px;max-width:380px;width:100%;display:flex;flex-direction:column;gap:12px}
+#box h1{margin:0;font:700 26px Georgia,serif}
+#box p{margin:0;font-size:15px;line-height:1.45}
+.big{height:50px;border:0;border-radius:12px;background:var(--ink);color:var(--bg);font:700 17px system-ui,sans-serif}
+#tools{display:flex;gap:8px;justify-content:center}
+#bell,#chatb{border:1px solid var(--line);background:var(--card);color:var(--mut);border-radius:999px;padding:6px 14px;font:600 13px system-ui,sans-serif}
+#bell[hidden],#chatb[hidden],#chat[hidden]{display:none}
+#chatb.new{color:var(--ink);border-color:var(--ink)}
+#chat{position:fixed;inset:0;z-index:4;background:var(--bg);display:flex;flex-direction:column;max-width:460px;margin:0 auto;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+#chh{display:flex;align-items:center;justify-content:space-between;padding:12px 14px;border-bottom:1px solid var(--line)}
+#chh b{font:700 18px Georgia,serif}
+#chx{width:44px;height:44px;border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:10px;font-size:18px}
+#chl{flex:1;overflow-y:auto;padding:12px 14px;display:flex;flex-direction:column;gap:6px}
+#chl .m{max-width:80%;padding:8px 12px;border-radius:14px;font-size:16px;line-height:1.35;background:var(--card);word-wrap:break-word;overflow-wrap:anywhere}
+#chl .me{align-self:flex-end;border-bottom-right-radius:4px;background:var(--p1t);color:var(--ink)}
+#chl .me.p1{background:var(--p2t)}
+#chl .them{align-self:flex-start;border-bottom-left-radius:4px;border:1px solid var(--line)}
+#chl .none{margin:auto;color:var(--mut);font-size:14px;text-align:center}
+#chf{display:flex;gap:8px;padding:10px 14px;border-top:1px solid var(--line)}
+#chi{flex:1;min-width:0;height:46px;border:1px solid var(--line);border-radius:12px;padding:0 12px;font:16px system-ui,sans-serif;background:var(--card);color:var(--ink)}
+#chs{height:46px;padding:0 18px;border:0;border-radius:12px;background:var(--ink);color:var(--bg);font:700 16px system-ui,sans-serif}
+.big.alt{background:transparent;color:var(--ink);border:1px solid var(--line)}
+#lk{word-break:break-all;font-size:14px;background:var(--bg);padding:8px 10px;border-radius:8px;display:block}
+</style>
+</head>
+<body>
+<div id="app">
+<div class="scores" id="scores"></div>
+<div id="grid" role="grid" aria-label="Crossword grid"></div>
+<div id="clue"></div>
+<div id="msg" aria-live="polite"></div>
+<div id="tools"><button id="bell" hidden>🔔 Get turn alerts</button><button id="chatb" hidden>💬 Chat</button></div>
+<div id="kb"></div>
+</div>
+<div id="chat" hidden><div id="chh"><b>Chat</b><button id="chx" aria-label="Close chat">✕</button></div><div id="chl" aria-live="polite"></div><div id="chf"><input id="chi" maxlength="200" placeholder="Message your friend" autocomplete="off" enterkeyhint="send" aria-label="Message"><button id="chs">Send</button></div></div>
+<div id="ovl"><div id="box"></div></div>
+<script>
+const PZ=[{"id":1,"grid":["###JOG###","###EVEN##","##PLATES#","SHALL#EAR","EASY#EDGE","ART#FILED","#DOSAGE##","##RICH###","###PET###"],"across":[{"num":1,"answer":"JOG","clue":"Run at an easy pace"},{"num":4,"answer":"EVEN","clue":"Level or flat"},{"num":6,"answer":"PLATES","clue":"Dinner dishes"},{"num":8,"answer":"SHALL","clue":"'___ we dance?'"},{"num":10,"answer":"EAR","clue":"Body part you hear with"},{"num":12,"answer":"EASY","clue":"Not hard"},{"num":13,"answer":"EDGE","clue":"Border or rim"},{"num":14,"answer":"ART","clue":"Painting or sculpture"},{"num":15,"answer":"FILED","clue":"Put away in a cabinet"},{"num":16,"answer":"DOSAGE","clue":"Amount of medicine to take"},{"num":18,"answer":"RICH","clue":"Having lots of money"},{"num":19,"answer":"PET","clue":"Dog or cat at home"}],"down":[{"num":1,"answer":"JELLY","clue":"Sweet spread for toast"},{"num":2,"answer":"OVAL","clue":"Egg-shaped"},{"num":3,"answer":"GET","clue":"Receive"},{"num":5,"answer":"NEEDLE","clue":"Sewing tool with an eye"},{"num":6,"answer":"PASTOR","clue":"Church leader"},{"num":7,"answer":"SAGE","clue":"Wise person"},{"num":8,"answer":"SEA","clue":"Salty body of water"},{"num":9,"answer":"HARD","clue":"Not soft"},{"num":11,"answer":"RED","clue":"Color of a stop sign"},{"num":13,"answer":"EIGHT","clue":"Number after seven"},{"num":15,"answer":"FACE","clue":"Front of the head"},{"num":17,"answer":"SIP","clue":"Small drink"}]},{"id":2,"grid":["###JUG###","##MESA###","#LOWEST##","MOVES#ATE","EVIL#AREA","TEE#SUGAR","##SPIDER#","###EDIT##","###NET###"],"across":[{"num":1,"answer":"JUG","clue":"Container for milk or juice"},{"num":4,"answer":"MESA","clue":"Flat-topped hill"},{"num":5,"answer":"LOWEST","clue":"Least high"},{"num":7,"answer":"MOVES","clue":"Chess turns"},{"num":8,"answer":"ATE","clue":"Had dinner"},{"num":11,"answer":"EVIL","clue":"Wicked"},{"num":12,"answer":"AREA","clue":"Space measured in square feet"},{"num":13,"answer":"TEE","clue":"Golf ball holder"},{"num":14,"answer":"SUGAR","clue":"Sweet stuff in a bowl"},{"num":15,"answer":"SPIDER","clue":"Web spinner"},{"num":17,"answer":"EDIT","clue":"Fix a draft"},{"num":18,"answer":"NET","clue":"Tennis court divider"}],"down":[{"num":1,"answer":"JEWEL","clue":"Gem in a ring"},{"num":2,"answer":"USES","clue":"Puts to work"},{"num":3,"answer":"GAS","clue":"Fuel for a car"},{"num":4,"answer":"MOVIES","clue":"Films"},{"num":5,"answer":"LOVE","clue":"Deep affection"},{"num":6,"answer":"TARGET","clue":"Thing aimed at"},{"num":7,"answer":"MET","clue":"Got together with"},{"num":9,"answer":"TEAR","clue":"Drop from an eye"},{"num":10,"answer":"EAR","clue":"Where you wear an earring"},{"num":12,"answer":"AUDIT","clue":"Tax inspection"},{"num":14,"answer":"SIDE","clue":"Left or right"},{"num":16,"answer":"PEN","clue":"Ink writer"}]},{"id":3,"grid":["###LIT###","###USER##","###CLAIMS","STAKE#VET","HOLY#GENE","ONE#SERUM","PERSON###","##TEAR###","###ARE###"],"across":[{"num":1,"answer":"LIT","clue":"Having a light on"},{"num":4,"answer":"USER","clue":"Person using an app"},{"num":6,"answer":"CLAIMS","clue":"States as true"},{"num":9,"answer":"STAKE","clue":"Wooden post"},{"num":12,"answer":"VET","clue":"Animal doctor"},{"num":13,"answer":"HOLY","clue":"Sacred"},{"num":14,"answer":"GENE","clue":"Unit of heredity"},{"num":15,"answer":"ONE","clue":"The number before two"},{"num":16,"answer":"SERUM","clue":"Skin care liquid"},{"num":17,"answer":"PERSON","clue":"Human being"},{"num":19,"answer":"TEAR","clue":"Rip"},{"num":20,"answer":"ARE","clue":"Form of 'be' used with you"}],"down":[{"num":1,"answer":"LUCKY","clue":"Having good fortune"},{"num":2,"answer":"ISLE","clue":"Small island"},{"num":3,"answer":"TEA","clue":"Hot drink in a cup"},{"num":5,"answer":"RIVER","clue":"Flowing water"},{"num":7,"answer":"MENU","clue":"List at a restaurant"},{"num":8,"answer":"STEM","clue":"Flower's stalk"},{"num":9,"answer":"SHOP","clue":"Store"},{"num":10,"answer":"TONE","clue":"Sound quality"},{"num":11,"answer":"ALERT","clue":"Wide awake"},{"num":14,"answer":"GENRE","clue":"Type of music or books"},{"num":16,"answer":"SOAR","clue":"Fly high"},{"num":18,"answer":"SEA","clue":"Where ships sail"}]},{"id":4,"grid":["###FED###","#BRAVE###","#LATEST##","HATE#KING","ASH###GUY","STEP#TERM","##RIDERS#","###PULSE#","###EEL###"],"across":[{"num":1,"answer":"FED","clue":"Gave food to"},{"num":4,"answer":"BRAVE","clue":"Not afraid"},{"num":6,"answer":"LATEST","clue":"Most recent"},{"num":8,"answer":"HATE","clue":"Strong dislike"},{"num":9,"answer":"KING","clue":"Ruler with a crown"},{"num":12,"answer":"ASH","clue":"Fireplace leftover"},{"num":13,"answer":"GUY","clue":"Fellow"},{"num":14,"answer":"STEP","clue":"Stair"},{"num":16,"answer":"TERM","clue":"School semester"},{"num":17,"answer":"RIDERS","clue":"Horse or bike travelers"},{"num":19,"answer":"PULSE","clue":"Heartbeat"},{"num":20,"answer":"EEL","clue":"Slippery, snakelike fish"}],"down":[{"num":1,"answer":"FATE","clue":"Destiny"},{"num":2,"answer":"EVE","clue":"Night before a holiday"},{"num":3,"answer":"DESK","clue":"Office table"},{"num":4,"answer":"BLAST","clue":"Big explosion"},{"num":5,"answer":"RATHER","clue":"Somewhat"},{"num":7,"answer":"TIGERS","clue":"Striped big cats"},{"num":8,"answer":"HAS","clue":"Owns"},{"num":10,"answer":"NURSE","clue":"Hospital caregiver"},{"num":11,"answer":"GYM","clue":"Place to work out"},{"num":15,"answer":"PIPE","clue":"Water carrier under a sink"},{"num":16,"answer":"TELL","clue":"Share a story"},{"num":18,"answer":"DUE","clue":"Expected to arrive"}]},{"id":5,"grid":["###NUT###","##HOSE###","#POWERS##","AIR#DRESS","REST#YELL","CREEK#KEY","##SEEMED#","###NEAR##","###SPY###"],"across":[{"num":1,"answer":"NUT","clue":"Almond or walnut"},{"num":4,"answer":"HOSE","clue":"Garden watering tube"},{"num":5,"answer":"POWERS","clue":"Abilities of a superhero"},{"num":7,"answer":"AIR","clue":"What we breathe"},{"num":8,"answer":"DRESS","clue":"Gown"},{"num":11,"answer":"REST","clue":"Take a break"},{"num":13,"answer":"YELL","clue":"Shout"},{"num":14,"answer":"CREEK","clue":"Small stream"},{"num":16,"answer":"KEY","clue":"Opens a lock"},{"num":17,"answer":"SEEMED","clue":"Appeared to be"},{"num":19,"answer":"NEAR","clue":"Close by"},{"num":20,"answer":"SPY","clue":"Secret agent"}],"down":[{"num":1,"answer":"NOW","clue":"At this moment"},{"num":2,"answer":"USED","clue":"Not new"},{"num":3,"answer":"TERRY","clue":"Soft towel cloth"},{"num":4,"answer":"HORSES","clue":"Animals that gallop"},{"num":5,"answer":"PIER","clue":"Dock over water"},{"num":6,"answer":"SEEKER","clue":"One who searches"},{"num":7,"answer":"ARC","clue":"Curved line"},{"num":9,"answer":"SLED","clue":"Winter toy with runners"},{"num":10,"answer":"SLY","clue":"Clever and sneaky"},{"num":12,"answer":"TEENS","clue":"Ages 13 to 19"},{"num":15,"answer":"KEEP","clue":"Hold on to"},{"num":18,"answer":"MAY","clue":"Month after April"}]},{"id":6,"grid":["###RICE##","###ICONS#","###DEATH#","EDGE#LIES","ARE###TEE","TENT#BYTE","#ARISE###","#MEDIA###","##SEND###"],"across":[{"num":1,"answer":"RICE","clue":"Grain in sushi"},{"num":5,"answer":"ICONS","clue":"Small pictures on a phone screen"},{"num":7,"answer":"DEATH","clue":"End of life"},{"num":8,"answer":"EDGE","clue":"Sharp side of a knife"},{"num":11,"answer":"LIES","clue":"Untrue statements"},{"num":13,"answer":"ARE","clue":"'We ___ the champions'"},{"num":14,"answer":"TEE","clue":"Short-sleeved shirt"},{"num":15,"answer":"TENT","clue":"Camping shelter"},{"num":17,"answer":"BYTE","clue":"Unit of computer data"},{"num":18,"answer":"ARISE","clue":"Get up"},{"num":20,"answer":"MEDIA","clue":"News outlets"},{"num":21,"answer":"SEND","clue":"Mail off"}],"down":[{"num":1,"answer":"RIDE","clue":"Trip in a car"},{"num":2,"answer":"ICE","clue":"Frozen water"},{"num":3,"answer":"COAL","clue":"Black rock burned for fuel"},{"num":4,"answer":"ENTITY","clue":"Thing that exists"},{"num":6,"answer":"SHEET","clue":"Bed linen"},{"num":8,"answer":"EAT","clue":"Have lunch"},{"num":9,"answer":"DREAM","clue":"Vision while asleep"},{"num":10,"answer":"GENRES","clue":"Categories of music"},{"num":12,"answer":"SEE","clue":"Look at"},{"num":16,"answer":"TIDE","clue":"Rise and fall of the ocean"},{"num":17,"answer":"BEAD","clue":"Small piece on a necklace"},{"num":19,"answer":"SIN","clue":"Wrongdoing"}]},{"id":7,"grid":["###NAP###","###EXIT##","#REVIEW##","BOXES#ERA","USER#SLED","GEM#WAVES","##PROVED#","##TIRE###","###BED###"],"across":[{"num":1,"answer":"NAP","clue":"Short sleep"},{"num":4,"answer":"EXIT","clue":"Way out"},{"num":6,"answer":"REVIEW","clue":"Critic's write-up"},{"num":8,"answer":"BOXES","clue":"Cardboard containers"},{"num":9,"answer":"ERA","clue":"Period of history"},{"num":12,"answer":"USER","clue":"Customer of a website"},{"num":13,"answer":"SLED","clue":"Ride down a snowy hill"},{"num":14,"answer":"GEM","clue":"Precious stone"},{"num":15,"answer":"WAVES","clue":"Ocean swells"},{"num":16,"answer":"PROVED","clue":"Showed to be true"},{"num":18,"answer":"TIRE","clue":"Rubber wheel cover"},{"num":19,"answer":"BED","clue":"Place to sleep"}],"down":[{"num":1,"answer":"NEVER","clue":"Not ever"},{"num":2,"answer":"AXIS","clue":"Line a wheel turns on"},{"num":3,"answer":"PIE","clue":"Dessert with a crust"},{"num":5,"answer":"TWELVE","clue":"A dozen"},{"num":6,"answer":"ROSE","clue":"Red flower with thorns"},{"num":7,"answer":"EXEMPT","clue":"Excused from a rule"},{"num":8,"answer":"BUG","clue":"Insect"},{"num":10,"answer":"REED","clue":"Tall grass by a pond"},{"num":11,"answer":"ADS","clue":"Commercials"},{"num":13,"answer":"SAVED","clue":"Kept safe"},{"num":15,"answer":"WORE","clue":"Had on, as clothes"},{"num":17,"answer":"RIB","clue":"Bone in the chest"}]},{"id":8,"grid":["##SEEK###","#STYLE###","CHEESE###","OAR#EPIC#","PREP#SNOW","#POUR#TIE","###PATENT","###ICONS#","###LEND##"],"across":[{"num":1,"answer":"SEEK","clue":"Look for"},{"num":5,"answer":"STYLE","clue":"Fashion"},{"num":6,"answer":"CHEESE","clue":"Cheddar or Swiss"},{"num":7,"answer":"OAR","clue":"Paddle for a rowboat"},{"num":8,"answer":"EPIC","clue":"Grand, long story"},{"num":11,"answer":"PREP","clue":"Get ready, for short"},{"num":13,"answer":"SNOW","clue":"White winter flakes"},{"num":15,"answer":"POUR","clue":"Tip out a liquid"},{"num":17,"answer":"TIE","clue":"Draw in a game"},{"num":18,"answer":"PATENT","clue":"Inventor's legal protection"},{"num":20,"answer":"ICONS","clue":"Famous legends"},{"num":21,"answer":"LEND","clue":"Let someone borrow"}],"down":[{"num":1,"answer":"STEREO","clue":"Two-speaker sound system"},{"num":2,"answer":"EYE","clue":"Organ for seeing"},{"num":3,"answer":"ELSE","clue":"Other than that"},{"num":4,"answer":"KEEPS","clue":"Holds on to"},{"num":5,"answer":"SHARP","clue":"Having a fine point"},{"num":6,"answer":"COP","clue":"Police officer"},{"num":9,"answer":"INTEND","clue":"Plan to do"},{"num":10,"answer":"COINS","clue":"Pennies and dimes"},{"num":12,"answer":"PUPIL","clue":"Student"},{"num":14,"answer":"WET","clue":"Not dry"},{"num":16,"answer":"RACE","clue":"Contest of speed"},{"num":19,"answer":"TON","clue":"Two thousand pounds"}]},{"id":9,"grid":["##TIDY###","#SHORE###","#CANAL###","HEN#GLASS","INK###SPA","TESTS#PAD","###OUTER#","###PRICE#","###SENT##"],"across":[{"num":1,"answer":"TIDY","clue":"Neat"},{"num":5,"answer":"SHORE","clue":"Beach edge"},{"num":6,"answer":"CANAL","clue":"Man-made waterway"},{"num":7,"answer":"HEN","clue":"Egg-laying bird"},{"num":8,"answer":"GLASS","clue":"Window material"},{"num":12,"answer":"INK","clue":"Pen fluid"},{"num":13,"answer":"SPA","clue":"Relaxing place for massages"},{"num":14,"answer":"TESTS","clue":"Exams"},{"num":17,"answer":"PAD","clue":"Notebook of paper"},{"num":18,"answer":"OUTER","clue":"Farthest from the middle"},{"num":20,"answer":"PRICE","clue":"Cost shown on a tag"},{"num":21,"answer":"SENT","clue":"Mailed"}],"down":[{"num":1,"answer":"THANKS","clue":"Words of gratitude"},{"num":2,"answer":"ION","clue":"Charged particle"},{"num":3,"answer":"DRAG","clue":"Pull along the ground"},{"num":4,"answer":"YELL","clue":"Cry out loudly"},{"num":5,"answer":"SCENE","clue":"Part of a play"},{"num":7,"answer":"HIT","clue":"Baseball single"},{"num":9,"answer":"ASPECT","clue":"Side or feature of something"},{"num":10,"answer":"SPARE","clue":"Extra"},{"num":11,"answer":"SAD","clue":"Feeling blue"},{"num":15,"answer":"TOPS","clue":"Uppermost parts"},{"num":16,"answer":"SURE","clue":"Certain"},{"num":19,"answer":"TIN","clue":"Metal for cans"}]},{"id":10,"grid":["##COME###","#CORAL###","#LOANS###","POLL#ECHO","USE###OIL","TERM#CORD","###AWAKE#","###RIGID#","###KNEE##"],"across":[{"num":1,"answer":"COME","clue":"Arrive"},{"num":5,"answer":"CORAL","clue":"Reef builder"},{"num":6,"answer":"LOANS","clue":"Money borrowed from a bank"},{"num":7,"answer":"POLL","clue":"Survey of opinions"},{"num":8,"answer":"ECHO","clue":"Sound that bounces back"},{"num":12,"answer":"USE","clue":"Employ"},{"num":13,"answer":"OIL","clue":"Slippery liquid for engines"},{"num":14,"answer":"TERM","clue":"Word or phrase"},{"num":16,"answer":"CORD","clue":"Thin rope"},{"num":17,"answer":"AWAKE","clue":"Not asleep"},{"num":19,"answer":"RIGID","clue":"Stiff"},{"num":20,"answer":"KNEE","clue":"Leg joint"}],"down":[{"num":1,"answer":"COOLER","clue":"Picnic ice box"},{"num":2,"answer":"ORAL","clue":"Spoken"},{"num":3,"answer":"MAN","clue":"Adult male"},{"num":4,"answer":"ELSE","clue":"'Would you like anything ___?'"},{"num":5,"answer":"CLOSE","clue":"Shut"},{"num":7,"answer":"PUT","clue":"Place"},{"num":9,"answer":"COOKIE","clue":"Chocolate chip treat"},{"num":10,"answer":"HIRED","clue":"Given a job"},{"num":11,"answer":"OLD","clue":"Not young"},{"num":15,"answer":"MARK","clue":"Grade on a test"},{"num":16,"answer":"CAGE","clue":"Bird's home"},{"num":18,"answer":"WIN","clue":"Come in first"}]}];
+const pn0=(()=>{const m=/^#p(\d+)$/.exec(location.hash);if(m&&+m[1]>=1&&+m[1]<=PZ.length)return +m[1]-1;const d=new Date();return Math.floor(Date.UTC(d.getFullYear(),d.getMonth(),d.getDate())/864e5)%PZ.length})();
+let pn,G,CK;
+const N=9,NAMES=["Player 1","Player 2"],DIR=["A","D"],DN=["Across","Down"];
+const white=(r,c)=>r>=0&&c>=0&&r<N&&c<N&&G[r][c]!=="#";
+let slots,nums,cw;function build(i){pn=i;G=PZ[i].grid;CK={};PZ[i].across.forEach(a=>CK["A"+a.num]=a.clue);PZ[i].down.forEach(a=>CK["D"+a.num]=a.clue);slots=[];nums={};cw={};let n=0;
+for(let r=0;r<N;r++)for(let c=0;c<N;c++){if(!white(r,c))continue;
+ const sa=!white(r,c-1)&&white(r,c+1),sd=!white(r-1,c)&&white(r+1,c);
+ if(sa||sd){n++;nums[r+","+c]=n}
+ [[sa,"A",0,1],[sd,"D",1,0]].forEach(([f,d,dr,dc])=>{if(!f)return;const cells=[];let a=r,b=c;
+  while(white(a,b)){cells.push([a,b]);a+=dr;b+=dc}
+  const ans=cells.map(([x,y])=>G[x][y]).join("");
+  const s={dir:d,num:n,cells,ans,clue:CK[d+n]};slots.push(s);
+  cells.forEach(([x,y])=>{(cw[x+","+y]=cw[x+","+y]||{})[d]=s})})}}
+build(pn0);
+
+const API="/api/game";
+let L,turn,left,score,solved,cur,hist,msg,over,overShown,note="",online=null,timer=null;
+const myTurn=()=>!online||turn===online.seat;
+function start(){L=Array.from({length:N},()=>Array(N).fill(null));turn=0;left=3;score=[0,0];solved=new Set();hist=[];msg="";over=false;overShown=false;pick(null);}
+const mine=()=>slots.filter(s=>s.dir===DIR[turn]&&!solved.has(s));
+function firstEmpty(w,from=0){for(let i=0;i<w.cells.length;i++){const [r,c]=w.cells[(from+i)%w.cells.length];if(!L[r][c])return [r,c]}return null}
+function pick(w){if(!myTurn()){cur=null;return}const list=mine();w=w||list[0];if(!w){cur=null;return}cur={w,cell:firstEmpty(w)||w.cells[0]}}
+function sel(r,c){if(!myTurn()){msg="Waiting for "+NAMES[turn]+"…";return render()}const w=(cw[r+","+c]||{})[DIR[turn]];if(!w||solved.has(w)){msg="Pick a square in one of your "+DN[turn]+" words.";return render()}cur={w,cell:[r,c]};msg="";render()}
+function cycle(d){if(!myTurn())return;const l=mine();if(!l.length)return;let i=l.indexOf(cur&&cur.w);i=(i+d+l.length)%l.length;pick(l[i]);render()}
+function type(ch){if(over||!cur||left<=0||!myTurn()||(online&&!online.joined))return;let [r,c]=cur.cell;
+ if(L[r][c]){const e=firstEmpty(cur.w);if(!e)return;[r,c]=e}
+ L[r][c]={ch,o:turn};left--;hist.push([r,c]);msg="";
+ const out=[];
+ DIR.forEach(d=>{const s=(cw[r+","+c]||{})[d];if(s&&!solved.has(s)&&s.cells.every(([x,y])=>L[x][y]))out.push(resolve(s))});
+ if(out.length)msg=out.join(" ");
+ if(solved.size===slots.length){over=true;sync();return render()}
+ if(!solved.has(cur.w)){const e=firstEmpty(cur.w);if(e)cur.cell=e;else pick()}else pick();
+ if(left===0)return endTurn();sync();render()}
+function resolve(s){const wrong=s.cells.filter(([x,y])=>L[x][y].ch!==G[x][y]);hist=[];
+ if(!wrong.length){solved.add(s);const steal=s.dir!==DIR[turn];const p=(steal?15:10)+s.cells.length;score[turn]+=p;
+  return s.num+" "+DN[s.dir==="A"?0:1]+": correct, +"+p+(steal?" (steal)":"")+" for "+NAMES[turn]+".";}
+ wrong.forEach(([x,y])=>{score[L[x][y].o]-=1;L[x][y]=null});score[turn]-=2;
+ return s.num+" "+DN[s.dir==="A"?0:1]+": wrong. "+wrong.length+" letter"+(wrong.length>1?"s":"")+" erased (−1 each to who wrote them), −2 for "+NAMES[turn]+".";}
+function back(){if(over||!hist.length||!myTurn())return;const [r,c]=hist.pop();L[r][c]=null;left++;const w=(cw[r+","+c]||{})[DIR[turn]];if(w)cur={w,cell:[r,c]};sync();render()}
+function endTurn(){if(!myTurn())return;const last=msg;msg="";turn=1-turn;left=3;hist=[];
+ if(online){msg=last;cur=null;sync();return render()}
+ pick(null);render();
+ show("<h1>"+NAMES[turn]+", you’re up</h1><p>"+(last?last+"<br><br>":"")+"You play <b>"+DN[turn]+"</b>. Pass the phone, then tap when you’re ready.</p>","Start my turn")}
+function ask(html,btns){const o=document.getElementById("ovl"),b=document.getElementById("box");
+ b.innerHTML=html+btns.map((x,i)=>'<button class="big'+(x[2]?" alt":"")+'" data-i="'+i+'">'+x[0]+"</button>").join("");o.classList.add("show");
+ b.querySelectorAll("button").forEach(el=>{el.onclick=()=>{const x=btns[+el.dataset.i];if(!x[3])o.classList.remove("show");if(x[1])x[1](el)}});
+ const f=b.querySelector("button");if(f)f.focus()}
+const show=(html,label,fn)=>ask(html,[[label,fn]]);
+const rules="<p>Finish a word and score: 10 + 1 per letter for your own direction, 15 + 1 per letter for a steal. Wrong letters cost −1 for whoever wrote them, and −2 for whoever finished the wrong word.</p>";
+function render(){
+ const my=myTurn();
+ document.getElementById("scores").innerHTML=[0,1].map(i=>'<div class="chip p'+i+(i===turn&&!over?" on":"")+'"><small>'+NAMES[i]+(online&&i===online.seat?" (you)":"")+" · "+DN[i]+"</small><b>"+score[i]+"</b>"+(i===turn&&!over?'<div class="left" aria-label="'+left+' letters left">'+"●".repeat(left)+"○".repeat(3-left)+"</div>":"")+"</div>").join("");
+ let h="";for(let r=0;r<N;r++)for(let c=0;c<N;c++){const k=r+","+c;
+  if(!white(r,c)){h+='<div class="c k"></div>';continue}
+  const v=L[r][c],isCur=cur&&cur.cell[0]===r&&cur.cell[1]===c,inW=cur&&cur.w.cells.some(([x,y])=>x===r&&y===c);
+  const sv=["A","D"].some(d=>cw[k][d]&&solved.has(cw[k][d]));
+  h+='<button class="c'+(v?" o"+v.o:"")+(sv?" s":"")+(inW?" hl":"")+(isCur?" cur":"")+'" data-r="'+r+'" data-c="'+c+'" aria-label="Row '+(r+1)+", column "+(c+1)+(v?", "+v.ch:", empty")+'">'+(nums[k]?"<i>"+nums[k]+"</i>":"")+(v?v.ch:"")+"</button>"}
+ const g=document.getElementById("grid");g.innerHTML=h;g.querySelectorAll("button").forEach(b=>b.onclick=()=>sel(+b.dataset.r,+b.dataset.c));
+ const cl=document.getElementById("clue");cl.className="p"+turn;
+ cl.innerHTML=cur&&my?'<button class="nav" aria-label="Previous word">‹</button><div><small>'+cur.w.num+" "+DN[turn]+" · "+cur.w.cells.length+" letters</small>"+cur.w.clue+'</div><button class="nav" aria-label="Next word">›</button>':(over?"<div>Game over.</div>":(!my?"<div>Waiting for "+NAMES[turn]+"…<small>Their letters appear here as they play.</small></div>":"<div>No words left.</div>"));
+ if(cur&&my){const b=cl.querySelectorAll(".nav");b[0].onclick=()=>cycle(-1);b[1].onclick=()=>cycle(1)}
+ document.getElementById("msg").textContent=note||msg;
+ tools();
+ if(over&&!overShown){overShown=true;const w=score[0]===score[1]?"It’s a tie.":NAMES[score[0]>score[1]?0:1]+" wins.";
+  const html="<h1>"+w+"</h1><p>"+NAMES[0]+": "+score[0]+"<br>"+NAMES[1]+": "+score[1]+"</p>";
+  if(online)show(html,"New game",()=>{location.href=location.pathname});
+  else show(html,"Play again",()=>{build(pn+1>=PZ.length?0:pn+1);start();render();intro()})}}
+function intro(){show("<h1>Crossword Duel</h1><p>"+NAMES[0]+" solves the Across clues. "+NAMES[1]+" solves the Down clues. Take turns writing up to 3 letters.</p>"+rules,"Start game")}
+function menu(){ask("<h1>Crossword Duel</h1><p>Puzzle "+(pn+1)+" of "+PZ.length+". "+NAMES[0]+" solves the Across clues. "+NAMES[1]+" solves the Down clues. Take turns writing up to 3 letters.</p>"+rules+"<p>If you invite a friend, you’ll be randomly given Across or Down.</p>",
+ [["Invite a friend",createGame],["Play on this phone",null,1]])}
+
+/* ---------- two-phone play ---------- */
+const sleep=ms=>new Promise(r=>setTimeout(r,ms));
+async function call(q,opt){const r=await fetch(API+q,opt);let j={};try{j=await r.json()}catch(e){}if(!r.ok){const e=new Error(j.error||"http "+r.status);e.status=r.status;throw e}return j}
+const post=b=>call("",{method:"POST",headers:{"content-type":"application/json"},body:JSON.stringify(b)});
+const saved={get(c){try{return JSON.parse(localStorage.getItem("cd-"+c))}catch(e){return null}},set(c,v){try{localStorage.setItem("cd-"+c,JSON.stringify(v))}catch(e){}}};
+const snap=()=>({L,turn,left,score,solved:[...solved].map(s=>slots.indexOf(s)),over,msg});
+function applySnap(s){L=s.L;turn=s.turn;left=s.left;score=s.score;solved=new Set(s.solved.map(i=>slots[i]));over=s.over;msg=s.msg||"";hist=[];cur=null;if(myTurn()&&!over)pick(null)}
+const link=()=>location.origin+location.pathname+"?game="+online.code;
+function sync(){if(!online)return;online.dirty=true;if(!online.pushing)flush()}
+async function flush(){online.pushing=true;
+ while(online.dirty){online.dirty=false;
+  try{const j=await post({action:"push",code:online.code,token:online.token,version:online.ver,state:snap()});online.ver=j.version;if(note){note="";render()}}
+  catch(e){if(e.status===409||e.status===403){try{await pollOnce(true)}catch(x){}}else{online.dirty=true;note="Connection problem, retrying…";render();await sleep(1500)}}}
+ online.pushing=false}
+async function pollOnce(force){if(!online)return;
+ const q="?code="+encodeURIComponent(online.code)+"&token="+encodeURIComponent(online.token)+(Date.now()-lastInput<180000?"&ping=1":"")+(online.joined?"&since="+Math.max(0,online.since-5000):"");
+ const j=await call(q,{cache:"no-store"});
+ if(j.chat)addMsgs(j.chat);
+ if(note){note="";render()}
+ if(!online.joined&&j.joined){online.joined=true;ask("<h1>Your friend joined!</h1><p>You play <b>"+DN[online.seat]+"</b>. "+(online.seat===0?"You go first.":NAMES[0]+" goes first, and the board updates when it’s your turn.")+"</p>"+rules,[["Start",()=>render()]])}
+ if(j.version>online.ver&&(force||turn!==online.seat)){const prev=turn;online.ver=j.version;applySnap(j.state);render();
+  if(!over&&prev!==turn&&turn===online.seat)show("<h1>Your turn</h1><p>"+(msg?msg+"<br><br>":"")+"You play <b>"+DN[turn]+"</b>.</p>","Start my turn",()=>render())}}
+function loop(){clearInterval(timer);timer=setInterval(()=>{if(online&&!document.hidden&&!online.pushing&&(!over||chatOpen))pollOnce().catch(()=>{})},4000)}
+document.addEventListener("visibilitychange",()=>{if(online&&!document.hidden&&!over)pollOnce().catch(()=>{})});
+function waitScreen(){ask('<h1>Invite a friend</h1><p>Send this link to a friend. When they open it, the game begins. You play <b>'+DN[online.seat]+'</b>'+(online.seat===0?' and go first.':'. Your friend goes first.')+'</p><b id="lk"></b>',
+ [["Share link",async el=>{const u=link();try{if(navigator.share){await navigator.share({title:"Crossword Duel",text:"Join me for a crossword duel!",url:u});return}}catch(e){if(e&&e.name==="AbortError")return}
+   try{await navigator.clipboard.writeText(u);el.textContent="Link copied ✓"}catch(e){el.textContent="Copy the link above"}},0,1],
+  ["Cancel",()=>{location.href=location.pathname},1]]);
+ document.getElementById("lk").textContent=link()}
+const keep=()=>{try{history.replaceState(null,"","?game="+online.code+"&k="+online.token)}catch(e){}};
+async function createGame(){
+ try{start();const j=await post({action:"create",pz:pn,state:snap()});
+  online={code:j.code,token:j.token,seat:j.seat,ver:j.version,joined:false,pushing:false,dirty:false,alerts:false,since:0};saved.set(j.code,{token:j.token,seat:j.seat});
+  keep();render();waitScreen();loop();ping();autoAlerts()}
+ catch(e){online=null;ask("<h1>Couldn’t start</h1><p>The game server didn’t answer. Check your connection and try again.</p>",[["Back",menu]])}}
+async function joinGame(code,kt){let me=saved.get(code);
+ try{
+  if(kt){const j=await call("?code="+code+"&token="+encodeURIComponent(kt),{cache:"no-store"});if(j.seat===0||j.seat===1){me={token:kt,seat:j.seat};saved.set(code,me)}}
+  if(me&&me.token){const j=await call("?code="+code,{cache:"no-store"});build(j.pz);
+   online={code,token:me.token,seat:me.seat,ver:j.version,joined:j.joined,pushing:false,dirty:false,alerts:false,since:0};applySnap(j.state);keep();render();loop();ping();autoAlerts();
+   if(!j.joined)waitScreen();else if(!over)show("<h1>Welcome back</h1><p>You play <b>"+DN[online.seat]+"</b>."+(myTurn()?" It’s your turn.":" Waiting for "+NAMES[turn]+".")+"</p>","Continue",()=>render());
+   return}
+  const j=await post({action:"join",code});build(j.pz);
+  online={code,token:j.token,seat:j.seat,ver:j.version,joined:true,pushing:false,dirty:false,alerts:false,since:0};saved.set(code,{token:j.token,seat:j.seat});
+  applySnap(j.state);keep();render();loop();ping();autoAlerts();
+  show("<h1>You’re in!</h1><p>You play <b>"+DN[online.seat]+"</b>. "+(myTurn()?"You go first.":NAMES[0]+" goes first, and the board updates when it’s your turn.")+"</p>"+rules,"OK",()=>render())}
+ catch(e){online=null;ask("<h1>Can’t join</h1><p>"+(e.status===409?"This game already has two players.":e.status===404?"That game wasn’t found. Ask your friend for a new link.":"The game server didn’t answer. Try again in a moment.")+"</p>",[["Back to start",()=>{location.href=location.pathname}]])}}
+
+/* ---------- turn alerts ---------- */
+// "I'm here" signal: sent only while the page is visible and touched in the last 3 minutes.
+// The server skips the alert while these keep arriving, and sends one when they stop.
+let lastInput=Date.now();
+["pointerdown","keydown"].forEach(t=>document.addEventListener(t,()=>{lastInput=Date.now()},{passive:true}));
+function ping(){if(online)pollOnce().catch(()=>{})}
+const pushOK=()=>"serviceWorker" in navigator&&"PushManager" in window&&"Notification" in window;
+const b64u=t=>{const p="=".repeat((4-t.length%4)%4),r=atob((t+p).replace(/-/g,"+").replace(/_/g,"/"));return Uint8Array.from(r,c=>c.charCodeAt(0))};
+async function enableAlerts(tap){if(!online)return;
+ if(!pushOK()){if(tap)ask("<h1>Turn alerts</h1><p>This browser can’t show alerts. <b>On iPhone:</b> tap the Share button in Safari, choose <b>Add to Home Screen</b>, then open the game from that icon and tap this button again. <b>On Android or a computer:</b> use Chrome or Edge.</p>",[["OK"]]);return}
+ try{
+  if(Notification.permission==="denied"){if(tap)ask("<h1>Alerts are blocked</h1><p>Allow notifications for this site in your phone’s or browser’s settings, then tap the button again.</p>",[["OK"]]);return}
+  if(Notification.permission!=="granted"){if(!tap)return;if(await Notification.requestPermission()!=="granted"){render();return}}
+  const reg=await navigator.serviceWorker.ready;let sub=await reg.pushManager.getSubscription();
+  if(!sub){const k=await call("?vapid=1");sub=await reg.pushManager.subscribe({userVisibleOnly:true,applicationServerKey:b64u(k.publicKey)})}
+  await post({action:"subscribe",code:online.code,token:online.token,sub:sub.toJSON()});online.alerts=true;render()}
+ catch(e){if(tap)ask("<h1>Couldn’t turn on alerts</h1><p>Something went wrong. Please try again in a moment.</p>",[["OK"]])}}
+async function disableAlerts(){try{await post({action:"unsubscribe",code:online.code,token:online.token})}catch(e){}online.alerts=false;render()}
+function autoAlerts(){if(pushOK()&&Notification.permission==="granted")enableAlerts(false)}
+document.getElementById("bell").onclick=()=>{if(online)online.alerts?disableAlerts():enableAlerts(true)};
+try{if("serviceWorker" in navigator)navigator.serviceWorker.register("/sw.js")}catch(e){}
+
+/* ---------- chat ---------- */
+let chat=[],chatIds=new Set(),unread=0,chatOpen=false;
+function tools(){const bl=document.getElementById("bell"),cb=document.getElementById("chatb");
+ bl.hidden=!online||over;bl.textContent=online&&online.alerts?"🔔 Turn alerts on":"🔔 Get turn alerts";
+ cb.hidden=!online||!online.joined;cb.textContent=unread?"💬 Chat ("+unread+")":"💬 Chat";cb.className=unread?"new":""}
+function renderChat(){const l=document.getElementById("chl");l.innerHTML="";
+ if(!chat.length){const d=document.createElement("div");d.className="none";d.textContent="Say hi to your friend 👋";l.appendChild(d)}
+ chat.forEach(m=>{const d=document.createElement("div");d.className="m "+(m.s===online.seat?"me":"them")+" p"+m.s;d.textContent=m.t;l.appendChild(d)});l.scrollTop=l.scrollHeight}
+function addMsgs(list){let fresh=0,any=false;
+ for(const m of list){const id=m.s+":"+m.at;if(chatIds.has(id))continue;chatIds.add(id);chat.push(m);any=true;if(m.at>online.since)online.since=m.at;if(m.s!==online.seat)fresh++}
+ if(!any)return;chat.sort((a,b)=>a.at-b.at);if(fresh&&!chatOpen)unread+=fresh;if(chatOpen)renderChat();tools()}
+function openChat(){chatOpen=true;unread=0;document.getElementById("chat").hidden=false;renderChat();tools();ping();setTimeout(()=>document.getElementById("chi").focus(),0)}
+function closeChat(){chatOpen=false;document.getElementById("chat").hidden=true;tools()}
+async function sendChat(){const i=document.getElementById("chi"),t=(i.value||"").trim();if(!t||!online)return;i.value="";i.placeholder="Message your friend";
+ try{const j=await post({action:"say",code:online.code,token:online.token,text:t});addMsgs([{s:online.seat,t:t.slice(0,200),at:j.at}])}
+ catch(e){i.value=t;i.placeholder=e.status===429?"Slow down a little…":"Couldn’t send. Try again."}}
+document.getElementById("chatb").onclick=openChat;document.getElementById("chx").onclick=closeChat;document.getElementById("chs").onclick=sendChat;
+document.getElementById("chi").addEventListener("keydown",e=>{if(e.key==="Enter"){e.preventDefault();sendChat()}});
+
+const kb=document.getElementById("kb");
+kb.innerHTML=["QWERTYUIOP","ASDFGHJKL","ZXCVBNM"].map((r,i)=>'<div class="row">'+[...r].map(x=>'<button class="k" data-k="'+x+'">'+x+"</button>").join("")+(i===2?'<button class="k w" data-k="⌫" aria-label="Undo letter">⌫</button>':"")+"</div>").join("")+'<button id="end">End turn</button>';
+kb.onclick=e=>{const b=e.target.closest("button");if(!b)return;if(b.id==="end"){if(!over)endTurn();return}const k=b.dataset.k;if(k==="⌫")back();else type(k)};
+document.addEventListener("keydown",e=>{if(chatOpen||document.getElementById("ovl").classList.contains("show")||e.metaKey||e.ctrlKey)return;
+ if(/^[a-zA-Z]$/.test(e.key))type(e.key.toUpperCase());else if(e.key==="Backspace")back()});
+const gq=new URLSearchParams(location.search).get("game");
+start();render();
+if(gq&&/^[A-Za-z0-9]{4,8}$/.test(gq))joinGame(gq.toUpperCase(),new URLSearchParams(location.search).get("k"));else menu();
+</script>
+</body>
+</html>
