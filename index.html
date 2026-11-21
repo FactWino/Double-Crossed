@@ -92,7 +92,7 @@ button:focus-visible{outline:3px solid var(--ink);outline-offset:2px}
 <div id="ovl"><div id="box"></div></div>
 <script>
 (async()=>{const PZ=[];
- let miss=0;for(let i=1;i<=99&&miss<3;i++){let r=null;try{r=await fetch("puzzles/batch-"+i+".json",{cache:"no-cache"})}catch(e){}
+ let miss=0;for(let i=1;i<=99&&miss<3;i++){let r=null;try{r=await fetch("puzzles/batch-"+String(i).padStart(3,"0")+".json",{cache:"no-cache"})}catch(e){}
   if(!r||!r.ok){miss++;continue}miss=0;try{const j=await r.json();if(Array.isArray(j))PZ.push(...j)}catch(e){}}
  if(!PZ.length){document.body.insertAdjacentHTML("afterbegin","<p style='padding:24px;color:#888'>Couldn’t load the puzzles. Please refresh.</p>");return}
  window.PZ=PZ;const s=document.createElement("script");s.textContent=document.getElementById("main").textContent;document.body.appendChild(s)})();
