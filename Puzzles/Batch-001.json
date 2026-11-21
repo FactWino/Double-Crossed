@@ -1,0 +1,1382 @@
+[
+ {
+  "id": 1,
+  "grid": [
+   "###JOG###",
+   "###EVEN##",
+   "##PLATES#",
+   "SHALL#EAR",
+   "EASY#EDGE",
+   "ART#FILED",
+   "#DOSAGE##",
+   "##RICH###",
+   "###PET###"
+  ],
+  "across": [
+   {
+    "num": 1,
+    "answer": "JOG",
+    "clue": "Run at an easy pace"
+   },
+   {
+    "num": 4,
+    "answer": "EVEN",
+    "clue": "Level or flat"
+   },
+   {
+    "num": 6,
+    "answer": "PLATES",
+    "clue": "Dinner dishes"
+   },
+   {
+    "num": 8,
+    "answer": "SHALL",
+    "clue": "'___ we dance?'"
+   },
+   {
+    "num": 10,
+    "answer": "EAR",
+    "clue": "Body part you hear with"
+   },
+   {
+    "num": 12,
+    "answer": "EASY",
+    "clue": "Not hard"
+   },
+   {
+    "num": 13,
+    "answer": "EDGE",
+    "clue": "Border or rim"
+   },
+   {
+    "num": 14,
+    "answer": "ART",
+    "clue": "Painting or sculpture"
+   },
+   {
+    "num": 15,
+    "answer": "FILED",
+    "clue": "Put away in a cabinet"
+   },
+   {
+    "num": 16,
+    "answer": "DOSAGE",
+    "clue": "Amount of medicine to take"
+   },
+   {
+    "num": 18,
+    "answer": "RICH",
+    "clue": "Having lots of money"
+   },
+   {
+    "num": 19,
+    "answer": "PET",
+    "clue": "Dog or cat at home"
+   }
+  ],
+  "down": [
+   {
+    "num": 1,
+    "answer": "JELLY",
+    "clue": "Sweet spread for toast"
+   },
+   {
+    "num": 2,
+    "answer": "OVAL",
+    "clue": "Egg-shaped"
+   },
+   {
+    "num": 3,
+    "answer": "GET",
+    "clue": "Receive"
+   },
+   {
+    "num": 5,
+    "answer": "NEEDLE",
+    "clue": "Sewing tool with an eye"
+   },
+   {
+    "num": 6,
+    "answer": "PASTOR",
+    "clue": "Church leader"
+   },
+   {
+    "num": 7,
+    "answer": "SAGE",
+    "clue": "Wise person"
+   },
+   {
+    "num": 8,
+    "answer": "SEA",
+    "clue": "Salty body of water"
+   },
+   {
+    "num": 9,
+    "answer": "HARD",
+    "clue": "Not soft"
+   },
+   {
+    "num": 11,
+    "answer": "RED",
+    "clue": "Color of a stop sign"
+   },
+   {
+    "num": 13,
+    "answer": "EIGHT",
+    "clue": "Number after seven"
+   },
+   {
+    "num": 15,
+    "answer": "FACE",
+    "clue": "Front of the head"
+   },
+   {
+    "num": 17,
+    "answer": "SIP",
+    "clue": "Small drink"
+   }
+  ]
+ },
+ {
+  "id": 2,
+  "grid": [
+   "###JUG###",
+   "##MESA###",
+   "#LOWEST##",
+   "MOVES#ATE",
+   "EVIL#AREA",
+   "TEE#SUGAR",
+   "##SPIDER#",
+   "###EDIT##",
+   "###NET###"
+  ],
+  "across": [
+   {
+    "num": 1,
+    "answer": "JUG",
+    "clue": "Container for milk or juice"
+   },
+   {
+    "num": 4,
+    "answer": "MESA",
+    "clue": "Flat-topped hill"
+   },
+   {
+    "num": 5,
+    "answer": "LOWEST",
+    "clue": "Least high"
+   },
+   {
+    "num": 7,
+    "answer": "MOVES",
+    "clue": "Chess turns"
+   },
+   {
+    "num": 8,
+    "answer": "ATE",
+    "clue": "Had dinner"
+   },
+   {
+    "num": 11,
+    "answer": "EVIL",
+    "clue": "Wicked"
+   },
+   {
+    "num": 12,
+    "answer": "AREA",
+    "clue": "Space measured in square feet"
+   },
+   {
+    "num": 13,
+    "answer": "TEE",
+    "clue": "Golf ball holder"
+   },
+   {
+    "num": 14,
+    "answer": "SUGAR",
+    "clue": "Sweet stuff in a bowl"
+   },
+   {
+    "num": 15,
+    "answer": "SPIDER",
+    "clue": "Web spinner"
+   },
+   {
+    "num": 17,
+    "answer": "EDIT",
+    "clue": "Fix a draft"
+   },
+   {
+    "num": 18,
+    "answer": "NET",
+    "clue": "Tennis court divider"
+   }
+  ],
+  "down": [
+   {
+    "num": 1,
+    "answer": "JEWEL",
+    "clue": "Gem in a ring"
+   },
+   {
+    "num": 2,
+    "answer": "USES",
+    "clue": "Puts to work"
+   },
+   {
+    "num": 3,
+    "answer": "GAS",
+    "clue": "Fuel for a car"
+   },
+   {
+    "num": 4,
+    "answer": "MOVIES",
+    "clue": "Films"
+   },
+   {
+    "num": 5,
+    "answer": "LOVE",
+    "clue": "Deep affection"
+   },
+   {
+    "num": 6,
+    "answer": "TARGET",
+    "clue": "Thing aimed at"
+   },
+   {
+    "num": 7,
+    "answer": "MET",
+    "clue": "Got together with"
+   },
+   {
+    "num": 9,
+    "answer": "TEAR",
+    "clue": "Drop from an eye"
+   },
+   {
+    "num": 10,
+    "answer": "EAR",
+    "clue": "Where you wear an earring"
+   },
+   {
+    "num": 12,
+    "answer": "AUDIT",
+    "clue": "Tax inspection"
+   },
+   {
+    "num": 14,
+    "answer": "SIDE",
+    "clue": "Left or right"
+   },
+   {
+    "num": 16,
+    "answer": "PEN",
+    "clue": "Ink writer"
+   }
+  ]
+ },
+ {
+  "id": 3,
+  "grid": [
+   "###LIT###",
+   "###USER##",
+   "###CLAIMS",
+   "STAKE#VET",
+   "HOLY#GENE",
+   "ONE#SERUM",
+   "PERSON###",
+   "##TEAR###",
+   "###ARE###"
+  ],
+  "across": [
+   {
+    "num": 1,
+    "answer": "LIT",
+    "clue": "Having a light on"
+   },
+   {
+    "num": 4,
+    "answer": "USER",
+    "clue": "Person using an app"
+   },
+   {
+    "num": 6,
+    "answer": "CLAIMS",
+    "clue": "States as true"
+   },
+   {
+    "num": 9,
+    "answer": "STAKE",
+    "clue": "Wooden post"
+   },
+   {
+    "num": 12,
+    "answer": "VET",
+    "clue": "Animal doctor"
+   },
+   {
+    "num": 13,
+    "answer": "HOLY",
+    "clue": "Sacred"
+   },
+   {
+    "num": 14,
+    "answer": "GENE",
+    "clue": "Unit of heredity"
+   },
+   {
+    "num": 15,
+    "answer": "ONE",
+    "clue": "The number before two"
+   },
+   {
+    "num": 16,
+    "answer": "SERUM",
+    "clue": "Skin care liquid"
+   },
+   {
+    "num": 17,
+    "answer": "PERSON",
+    "clue": "Human being"
+   },
+   {
+    "num": 19,
+    "answer": "TEAR",
+    "clue": "Rip"
+   },
+   {
+    "num": 20,
+    "answer": "ARE",
+    "clue": "Form of 'be' used with you"
+   }
+  ],
+  "down": [
+   {
+    "num": 1,
+    "answer": "LUCKY",
+    "clue": "Having good fortune"
+   },
+   {
+    "num": 2,
+    "answer": "ISLE",
+    "clue": "Small island"
+   },
+   {
+    "num": 3,
+    "answer": "TEA",
+    "clue": "Hot drink in a cup"
+   },
+   {
+    "num": 5,
+    "answer": "RIVER",
+    "clue": "Flowing water"
+   },
+   {
+    "num": 7,
+    "answer": "MENU",
+    "clue": "List at a restaurant"
+   },
+   {
+    "num": 8,
+    "answer": "STEM",
+    "clue": "Flower's stalk"
+   },
+   {
+    "num": 9,
+    "answer": "SHOP",
+    "clue": "Store"
+   },
+   {
+    "num": 10,
+    "answer": "TONE",
+    "clue": "Sound quality"
+   },
+   {
+    "num": 11,
+    "answer": "ALERT",
+    "clue": "Wide awake"
+   },
+   {
+    "num": 14,
+    "answer": "GENRE",
+    "clue": "Type of music or books"
+   },
+   {
+    "num": 16,
+    "answer": "SOAR",
+    "clue": "Fly high"
+   },
+   {
+    "num": 18,
+    "answer": "SEA",
+    "clue": "Where ships sail"
+   }
+  ]
+ },
+ {
+  "id": 4,
+  "grid": [
+   "###FED###",
+   "#BRAVE###",
+   "#LATEST##",
+   "HATE#KING",
+   "ASH###GUY",
+   "STEP#TERM",
+   "##RIDERS#",
+   "###PULSE#",
+   "###EEL###"
+  ],
+  "across": [
+   {
+    "num": 1,
+    "answer": "FED",
+    "clue": "Gave food to"
+   },
+   {
+    "num": 4,
+    "answer": "BRAVE",
+    "clue": "Not afraid"
+   },
+   {
+    "num": 6,
+    "answer": "LATEST",
+    "clue": "Most recent"
+   },
+   {
+    "num": 8,
+    "answer": "HATE",
+    "clue": "Strong dislike"
+   },
+   {
+    "num": 9,
+    "answer": "KING",
+    "clue": "Ruler with a crown"
+   },
+   {
+    "num": 12,
+    "answer": "ASH",
+    "clue": "Fireplace leftover"
+   },
+   {
+    "num": 13,
+    "answer": "GUY",
+    "clue": "Fellow"
+   },
+   {
+    "num": 14,
+    "answer": "STEP",
+    "clue": "Stair"
+   },
+   {
+    "num": 16,
+    "answer": "TERM",
+    "clue": "School semester"
+   },
+   {
+    "num": 17,
+    "answer": "RIDERS",
+    "clue": "Horse or bike travelers"
+   },
+   {
+    "num": 19,
+    "answer": "PULSE",
+    "clue": "Heartbeat"
+   },
+   {
+    "num": 20,
+    "answer": "EEL",
+    "clue": "Slippery, snakelike fish"
+   }
+  ],
+  "down": [
+   {
+    "num": 1,
+    "answer": "FATE",
+    "clue": "Destiny"
+   },
+   {
+    "num": 2,
+    "answer": "EVE",
+    "clue": "Night before a holiday"
+   },
+   {
+    "num": 3,
+    "answer": "DESK",
+    "clue": "Office table"
+   },
+   {
+    "num": 4,
+    "answer": "BLAST",
+    "clue": "Big explosion"
+   },
+   {
+    "num": 5,
+    "answer": "RATHER",
+    "clue": "Somewhat"
+   },
+   {
+    "num": 7,
+    "answer": "TIGERS",
+    "clue": "Striped big cats"
+   },
+   {
+    "num": 8,
+    "answer": "HAS",
+    "clue": "Owns"
+   },
+   {
+    "num": 10,
+    "answer": "NURSE",
+    "clue": "Hospital caregiver"
+   },
+   {
+    "num": 11,
+    "answer": "GYM",
+    "clue": "Place to work out"
+   },
+   {
+    "num": 15,
+    "answer": "PIPE",
+    "clue": "Water carrier under a sink"
+   },
+   {
+    "num": 16,
+    "answer": "TELL",
+    "clue": "Share a story"
+   },
+   {
+    "num": 18,
+    "answer": "DUE",
+    "clue": "Expected to arrive"
+   }
+  ]
+ },
+ {
+  "id": 5,
+  "grid": [
+   "###NUT###",
+   "##HOSE###",
+   "#POWERS##",
+   "AIR#DRESS",
+   "REST#YELL",
+   "CREEK#KEY",
+   "##SEEMED#",
+   "###NEAR##",
+   "###SPY###"
+  ],
+  "across": [
+   {
+    "num": 1,
+    "answer": "NUT",
+    "clue": "Almond or walnut"
+   },
+   {
+    "num": 4,
+    "answer": "HOSE",
+    "clue": "Garden watering tube"
+   },
+   {
+    "num": 5,
+    "answer": "POWERS",
+    "clue": "Abilities of a superhero"
+   },
+   {
+    "num": 7,
+    "answer": "AIR",
+    "clue": "What we breathe"
+   },
+   {
+    "num": 8,
+    "answer": "DRESS",
+    "clue": "Gown"
+   },
+   {
+    "num": 11,
+    "answer": "REST",
+    "clue": "Take a break"
+   },
+   {
+    "num": 13,
+    "answer": "YELL",
+    "clue": "Shout"
+   },
+   {
+    "num": 14,
+    "answer": "CREEK",
+    "clue": "Small stream"
+   },
+   {
+    "num": 16,
+    "answer": "KEY",
+    "clue": "Opens a lock"
+   },
+   {
+    "num": 17,
+    "answer": "SEEMED",
+    "clue": "Appeared to be"
+   },
+   {
+    "num": 19,
+    "answer": "NEAR",
+    "clue": "Close by"
+   },
+   {
+    "num": 20,
+    "answer": "SPY",
+    "clue": "Secret agent"
+   }
+  ],
+  "down": [
+   {
+    "num": 1,
+    "answer": "NOW",
+    "clue": "At this moment"
+   },
+   {
+    "num": 2,
+    "answer": "USED",
+    "clue": "Not new"
+   },
+   {
+    "num": 3,
+    "answer": "TERRY",
+    "clue": "Soft towel cloth"
+   },
+   {
+    "num": 4,
+    "answer": "HORSES",
+    "clue": "Animals that gallop"
+   },
+   {
+    "num": 5,
+    "answer": "PIER",
+    "clue": "Dock over water"
+   },
+   {
+    "num": 6,
+    "answer": "SEEKER",
+    "clue": "One who searches"
+   },
+   {
+    "num": 7,
+    "answer": "ARC",
+    "clue": "Curved line"
+   },
+   {
+    "num": 9,
+    "answer": "SLED",
+    "clue": "Winter toy with runners"
+   },
+   {
+    "num": 10,
+    "answer": "SLY",
+    "clue": "Clever and sneaky"
+   },
+   {
+    "num": 12,
+    "answer": "TEENS",
+    "clue": "Ages 13 to 19"
+   },
+   {
+    "num": 15,
+    "answer": "KEEP",
+    "clue": "Hold on to"
+   },
+   {
+    "num": 18,
+    "answer": "MAY",
+    "clue": "Month after April"
+   }
+  ]
+ },
+ {
+  "id": 6,
+  "grid": [
+   "###RICE##",
+   "###ICONS#",
+   "###DEATH#",
+   "EDGE#LIES",
+   "ARE###TEE",
+   "TENT#BYTE",
+   "#ARISE###",
+   "#MEDIA###",
+   "##SEND###"
+  ],
+  "across": [
+   {
+    "num": 1,
+    "answer": "RICE",
+    "clue": "Grain in sushi"
+   },
+   {
+    "num": 5,
+    "answer": "ICONS",
+    "clue": "Small pictures on a phone screen"
+   },
+   {
+    "num": 7,
+    "answer": "DEATH",
+    "clue": "End of life"
+   },
+   {
+    "num": 8,
+    "answer": "EDGE",
+    "clue": "Sharp side of a knife"
+   },
+   {
+    "num": 11,
+    "answer": "LIES",
+    "clue": "Untrue statements"
+   },
+   {
+    "num": 13,
+    "answer": "ARE",
+    "clue": "'We ___ the champions'"
+   },
+   {
+    "num": 14,
+    "answer": "TEE",
+    "clue": "Short-sleeved shirt"
+   },
+   {
+    "num": 15,
+    "answer": "TENT",
+    "clue": "Camping shelter"
+   },
+   {
+    "num": 17,
+    "answer": "BYTE",
+    "clue": "Unit of computer data"
+   },
+   {
+    "num": 18,
+    "answer": "ARISE",
+    "clue": "Get up"
+   },
+   {
+    "num": 20,
+    "answer": "MEDIA",
+    "clue": "News outlets"
+   },
+   {
+    "num": 21,
+    "answer": "SEND",
+    "clue": "Mail off"
+   }
+  ],
+  "down": [
+   {
+    "num": 1,
+    "answer": "RIDE",
+    "clue": "Trip in a car"
+   },
+   {
+    "num": 2,
+    "answer": "ICE",
+    "clue": "Frozen water"
+   },
+   {
+    "num": 3,
+    "answer": "COAL",
+    "clue": "Black rock burned for fuel"
+   },
+   {
+    "num": 4,
+    "answer": "ENTITY",
+    "clue": "Thing that exists"
+   },
+   {
+    "num": 6,
+    "answer": "SHEET",
+    "clue": "Bed linen"
+   },
+   {
+    "num": 8,
+    "answer": "EAT",
+    "clue": "Have lunch"
+   },
+   {
+    "num": 9,
+    "answer": "DREAM",
+    "clue": "Vision while asleep"
+   },
+   {
+    "num": 10,
+    "answer": "GENRES",
+    "clue": "Categories of music"
+   },
+   {
+    "num": 12,
+    "answer": "SEE",
+    "clue": "Look at"
+   },
+   {
+    "num": 16,
+    "answer": "TIDE",
+    "clue": "Rise and fall of the ocean"
+   },
+   {
+    "num": 17,
+    "answer": "BEAD",
+    "clue": "Small piece on a necklace"
+   },
+   {
+    "num": 19,
+    "answer": "SIN",
+    "clue": "Wrongdoing"
+   }
+  ]
+ },
+ {
+  "id": 7,
+  "grid": [
+   "###NAP###",
+   "###EXIT##",
+   "#REVIEW##",
+   "BOXES#ERA",
+   "USER#SLED",
+   "GEM#WAVES",
+   "##PROVED#",
+   "##TIRE###",
+   "###BED###"
+  ],
+  "across": [
+   {
+    "num": 1,
+    "answer": "NAP",
+    "clue": "Short sleep"
+   },
+   {
+    "num": 4,
+    "answer": "EXIT",
+    "clue": "Way out"
+   },
+   {
+    "num": 6,
+    "answer": "REVIEW",
+    "clue": "Critic's write-up"
+   },
+   {
+    "num": 8,
+    "answer": "BOXES",
+    "clue": "Cardboard containers"
+   },
+   {
+    "num": 9,
+    "answer": "ERA",
+    "clue": "Period of history"
+   },
+   {
+    "num": 12,
+    "answer": "USER",
+    "clue": "Customer of a website"
+   },
+   {
+    "num": 13,
+    "answer": "SLED",
+    "clue": "Ride down a snowy hill"
+   },
+   {
+    "num": 14,
+    "answer": "GEM",
+    "clue": "Precious stone"
+   },
+   {
+    "num": 15,
+    "answer": "WAVES",
+    "clue": "Ocean swells"
+   },
+   {
+    "num": 16,
+    "answer": "PROVED",
+    "clue": "Showed to be true"
+   },
+   {
+    "num": 18,
+    "answer": "TIRE",
+    "clue": "Rubber wheel cover"
+   },
+   {
+    "num": 19,
+    "answer": "BED",
+    "clue": "Place to sleep"
+   }
+  ],
+  "down": [
+   {
+    "num": 1,
+    "answer": "NEVER",
+    "clue": "Not ever"
+   },
+   {
+    "num": 2,
+    "answer": "AXIS",
+    "clue": "Line a wheel turns on"
+   },
+   {
+    "num": 3,
+    "answer": "PIE",
+    "clue": "Dessert with a crust"
+   },
+   {
+    "num": 5,
+    "answer": "TWELVE",
+    "clue": "A dozen"
+   },
+   {
+    "num": 6,
+    "answer": "ROSE",
+    "clue": "Red flower with thorns"
+   },
+   {
+    "num": 7,
+    "answer": "EXEMPT",
+    "clue": "Excused from a rule"
+   },
+   {
+    "num": 8,
+    "answer": "BUG",
+    "clue": "Insect"
+   },
+   {
+    "num": 10,
+    "answer": "REED",
+    "clue": "Tall grass by a pond"
+   },
+   {
+    "num": 11,
+    "answer": "ADS",
+    "clue": "Commercials"
+   },
+   {
+    "num": 13,
+    "answer": "SAVED",
+    "clue": "Kept safe"
+   },
+   {
+    "num": 15,
+    "answer": "WORE",
+    "clue": "Had on, as clothes"
+   },
+   {
+    "num": 17,
+    "answer": "RIB",
+    "clue": "Bone in the chest"
+   }
+  ]
+ },
+ {
+  "id": 8,
+  "grid": [
+   "##SEEK###",
+   "#STYLE###",
+   "CHEESE###",
+   "OAR#EPIC#",
+   "PREP#SNOW",
+   "#POUR#TIE",
+   "###PATENT",
+   "###ICONS#",
+   "###LEND##"
+  ],
+  "across": [
+   {
+    "num": 1,
+    "answer": "SEEK",
+    "clue": "Look for"
+   },
+   {
+    "num": 5,
+    "answer": "STYLE",
+    "clue": "Fashion"
+   },
+   {
+    "num": 6,
+    "answer": "CHEESE",
+    "clue": "Cheddar or Swiss"
+   },
+   {
+    "num": 7,
+    "answer": "OAR",
+    "clue": "Paddle for a rowboat"
+   },
+   {
+    "num": 8,
+    "answer": "EPIC",
+    "clue": "Grand, long story"
+   },
+   {
+    "num": 11,
+    "answer": "PREP",
+    "clue": "Get ready, for short"
+   },
+   {
+    "num": 13,
+    "answer": "SNOW",
+    "clue": "White winter flakes"
+   },
+   {
+    "num": 15,
+    "answer": "POUR",
+    "clue": "Tip out a liquid"
+   },
+   {
+    "num": 17,
+    "answer": "TIE",
+    "clue": "Draw in a game"
+   },
+   {
+    "num": 18,
+    "answer": "PATENT",
+    "clue": "Inventor's legal protection"
+   },
+   {
+    "num": 20,
+    "answer": "ICONS",
+    "clue": "Famous legends"
+   },
+   {
+    "num": 21,
+    "answer": "LEND",
+    "clue": "Let someone borrow"
+   }
+  ],
+  "down": [
+   {
+    "num": 1,
+    "answer": "STEREO",
+    "clue": "Two-speaker sound system"
+   },
+   {
+    "num": 2,
+    "answer": "EYE",
+    "clue": "Organ for seeing"
+   },
+   {
+    "num": 3,
+    "answer": "ELSE",
+    "clue": "Other than that"
+   },
+   {
+    "num": 4,
+    "answer": "KEEPS",
+    "clue": "Holds on to"
+   },
+   {
+    "num": 5,
+    "answer": "SHARP",
+    "clue": "Having a fine point"
+   },
+   {
+    "num": 6,
+    "answer": "COP",
+    "clue": "Police officer"
+   },
+   {
+    "num": 9,
+    "answer": "INTEND",
+    "clue": "Plan to do"
+   },
+   {
+    "num": 10,
+    "answer": "COINS",
+    "clue": "Pennies and dimes"
+   },
+   {
+    "num": 12,
+    "answer": "PUPIL",
+    "clue": "Student"
+   },
+   {
+    "num": 14,
+    "answer": "WET",
+    "clue": "Not dry"
+   },
+   {
+    "num": 16,
+    "answer": "RACE",
+    "clue": "Contest of speed"
+   },
+   {
+    "num": 19,
+    "answer": "TON",
+    "clue": "Two thousand pounds"
+   }
+  ]
+ },
+ {
+  "id": 9,
+  "grid": [
+   "##TIDY###",
+   "#SHORE###",
+   "#CANAL###",
+   "HEN#GLASS",
+   "INK###SPA",
+   "TESTS#PAD",
+   "###OUTER#",
+   "###PRICE#",
+   "###SENT##"
+  ],
+  "across": [
+   {
+    "num": 1,
+    "answer": "TIDY",
+    "clue": "Neat"
+   },
+   {
+    "num": 5,
+    "answer": "SHORE",
+    "clue": "Beach edge"
+   },
+   {
+    "num": 6,
+    "answer": "CANAL",
+    "clue": "Man-made waterway"
+   },
+   {
+    "num": 7,
+    "answer": "HEN",
+    "clue": "Egg-laying bird"
+   },
+   {
+    "num": 8,
+    "answer": "GLASS",
+    "clue": "Window material"
+   },
+   {
+    "num": 12,
+    "answer": "INK",
+    "clue": "Pen fluid"
+   },
+   {
+    "num": 13,
+    "answer": "SPA",
+    "clue": "Relaxing place for massages"
+   },
+   {
+    "num": 14,
+    "answer": "TESTS",
+    "clue": "Exams"
+   },
+   {
+    "num": 17,
+    "answer": "PAD",
+    "clue": "Notebook of paper"
+   },
+   {
+    "num": 18,
+    "answer": "OUTER",
+    "clue": "Farthest from the middle"
+   },
+   {
+    "num": 20,
+    "answer": "PRICE",
+    "clue": "Cost shown on a tag"
+   },
+   {
+    "num": 21,
+    "answer": "SENT",
+    "clue": "Mailed"
+   }
+  ],
+  "down": [
+   {
+    "num": 1,
+    "answer": "THANKS",
+    "clue": "Words of gratitude"
+   },
+   {
+    "num": 2,
+    "answer": "ION",
+    "clue": "Charged particle"
+   },
+   {
+    "num": 3,
+    "answer": "DRAG",
+    "clue": "Pull along the ground"
+   },
+   {
+    "num": 4,
+    "answer": "YELL",
+    "clue": "Cry out loudly"
+   },
+   {
+    "num": 5,
+    "answer": "SCENE",
+    "clue": "Part of a play"
+   },
+   {
+    "num": 7,
+    "answer": "HIT",
+    "clue": "Baseball single"
+   },
+   {
+    "num": 9,
+    "answer": "ASPECT",
+    "clue": "Side or feature of something"
+   },
+   {
+    "num": 10,
+    "answer": "SPARE",
+    "clue": "Extra"
+   },
+   {
+    "num": 11,
+    "answer": "SAD",
+    "clue": "Feeling blue"
+   },
+   {
+    "num": 15,
+    "answer": "TOPS",
+    "clue": "Uppermost parts"
+   },
+   {
+    "num": 16,
+    "answer": "SURE",
+    "clue": "Certain"
+   },
+   {
+    "num": 19,
+    "answer": "TIN",
+    "clue": "Metal for cans"
+   }
+  ]
+ },
+ {
+  "id": 10,
+  "grid": [
+   "##COME###",
+   "#CORAL###",
+   "#LOANS###",
+   "POLL#ECHO",
+   "USE###OIL",
+   "TERM#CORD",
+   "###AWAKE#",
+   "###RIGID#",
+   "###KNEE##"
+  ],
+  "across": [
+   {
+    "num": 1,
+    "answer": "COME",
+    "clue": "Arrive"
+   },
+   {
+    "num": 5,
+    "answer": "CORAL",
+    "clue": "Reef builder"
+   },
+   {
+    "num": 6,
+    "answer": "LOANS",
+    "clue": "Money borrowed from a bank"
+   },
+   {
+    "num": 7,
+    "answer": "POLL",
+    "clue": "Survey of opinions"
+   },
+   {
+    "num": 8,
+    "answer": "ECHO",
+    "clue": "Sound that bounces back"
+   },
+   {
+    "num": 12,
+    "answer": "USE",
+    "clue": "Employ"
+   },
+   {
+    "num": 13,
+    "answer": "OIL",
+    "clue": "Slippery liquid for engines"
+   },
+   {
+    "num": 14,
+    "answer": "TERM",
+    "clue": "Word or phrase"
+   },
+   {
+    "num": 16,
+    "answer": "CORD",
+    "clue": "Thin rope"
+   },
+   {
+    "num": 17,
+    "answer": "AWAKE",
+    "clue": "Not asleep"
+   },
+   {
+    "num": 19,
+    "answer": "RIGID",
+    "clue": "Stiff"
+   },
+   {
+    "num": 20,
+    "answer": "KNEE",
+    "clue": "Leg joint"
+   }
+  ],
+  "down": [
+   {
+    "num": 1,
+    "answer": "COOLER",
+    "clue": "Picnic ice box"
+   },
+   {
+    "num": 2,
+    "answer": "ORAL",
+    "clue": "Spoken"
+   },
+   {
+    "num": 3,
+    "answer": "MAN",
+    "clue": "Adult male"
+   },
+   {
+    "num": 4,
+    "answer": "ELSE",
+    "clue": "'Would you like anything ___?'"
+   },
+   {
+    "num": 5,
+    "answer": "CLOSE",
+    "clue": "Shut"
+   },
+   {
+    "num": 7,
+    "answer": "PUT",
+    "clue": "Place"
+   },
+   {
+    "num": 9,
+    "answer": "COOKIE",
+    "clue": "Chocolate chip treat"
+   },
+   {
+    "num": 10,
+    "answer": "HIRED",
+    "clue": "Given a job"
+   },
+   {
+    "num": 11,
+    "answer": "OLD",
+    "clue": "Not young"
+   },
+   {
+    "num": 15,
+    "answer": "MARK",
+    "clue": "Grade on a test"
+   },
+   {
+    "num": 16,
+    "answer": "CAGE",
+    "clue": "Bird's home"
+   },
+   {
+    "num": 18,
+    "answer": "WIN",
+    "clue": "Come in first"
+   }
+  ]
+ }
+]
