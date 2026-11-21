@@ -1,0 +1,1692 @@
+[
+ {
+  "id": 11,
+  "grid": [
+   "LAB###HOT",
+   "ORAL#FIVE",
+   "GENE#IDEA",
+   "#ADAPTER#",
+   "###RUN###",
+   "#CONTEST#",
+   "CAPE#SHIP",
+   "USED#SOME",
+   "PEN###WET"
+  ],
+  "across": [
+   {
+    "num": 1,
+    "answer": "LAB",
+    "clue": "Place for experiments"
+   },
+   {
+    "num": 4,
+    "answer": "HOT",
+    "clue": "Not cold"
+   },
+   {
+    "num": 7,
+    "answer": "ORAL",
+    "clue": "Spoken, not written"
+   },
+   {
+    "num": 9,
+    "answer": "FIVE",
+    "clue": "Number of fingers on a hand"
+   },
+   {
+    "num": 10,
+    "answer": "GENE",
+    "clue": "Unit of heredity"
+   },
+   {
+    "num": 11,
+    "answer": "IDEA",
+    "clue": "Bright thought"
+   },
+   {
+    "num": 12,
+    "answer": "ADAPTER",
+    "clue": "Plug converter for travel"
+   },
+   {
+    "num": 14,
+    "answer": "RUN",
+    "clue": "Jog faster"
+   },
+   {
+    "num": 15,
+    "answer": "CONTEST",
+    "clue": "Competition"
+   },
+   {
+    "num": 19,
+    "answer": "CAPE",
+    "clue": "Superhero's cloak"
+   },
+   {
+    "num": 20,
+    "answer": "SHIP",
+    "clue": "Large sea vessel"
+   },
+   {
+    "num": 22,
+    "answer": "USED",
+    "clue": "Secondhand"
+   },
+   {
+    "num": 23,
+    "answer": "SOME",
+    "clue": "A few"
+   },
+   {
+    "num": 24,
+    "answer": "PEN",
+    "clue": "Ink writer"
+   },
+   {
+    "num": 25,
+    "answer": "WET",
+    "clue": "Not dry"
+   }
+  ],
+  "down": [
+   {
+    "num": 1,
+    "answer": "LOG",
+    "clue": "Piece of firewood"
+   },
+   {
+    "num": 2,
+    "answer": "AREA",
+    "clue": "Region or zone"
+   },
+   {
+    "num": 3,
+    "answer": "BAND",
+    "clue": "Group of musicians"
+   },
+   {
+    "num": 4,
+    "answer": "HIDE",
+    "clue": "Conceal"
+   },
+   {
+    "num": 5,
+    "answer": "OVER",
+    "clue": "Finished"
+   },
+   {
+    "num": 6,
+    "answer": "TEA",
+    "clue": "Chamomile or Earl Grey"
+   },
+   {
+    "num": 8,
+    "answer": "LEARNED",
+    "clue": "Picked up knowledge"
+   },
+   {
+    "num": 9,
+    "answer": "FITNESS",
+    "clue": "Physical shape"
+   },
+   {
+    "num": 13,
+    "answer": "PUT",
+    "clue": "Place or set"
+   },
+   {
+    "num": 15,
+    "answer": "CASE",
+    "clue": "Suitcase or lawsuit"
+   },
+   {
+    "num": 16,
+    "answer": "OPEN",
+    "clue": "Not closed"
+   },
+   {
+    "num": 17,
+    "answer": "SHOW",
+    "clue": "TV program"
+   },
+   {
+    "num": 18,
+    "answer": "TIME",
+    "clue": "What a clock tells"
+   },
+   {
+    "num": 19,
+    "answer": "CUP",
+    "clue": "Coffee holder"
+   },
+   {
+    "num": 21,
+    "answer": "PET",
+    "clue": "Dog or cat at home"
+   }
+  ]
+ },
+ {
+  "id": 12,
+  "grid": [
+   "ARM###SHE",
+   "REAL#BEEN",
+   "TAKE#READ",
+   "#RESPOND#",
+   "###SET###",
+   "#CLOTHES#",
+   "GAIN#EXIT",
+   "USES#RATE",
+   "YES###MEN"
+  ],
+  "across": [
+   {
+    "num": 1,
+    "answer": "ARM",
+    "clue": "Limb with an elbow"
+   },
+   {
+    "num": 4,
+    "answer": "SHE",
+    "clue": "Female pronoun"
+   },
+   {
+    "num": 7,
+    "answer": "REAL",
+    "clue": "Genuine"
+   },
+   {
+    "num": 9,
+    "answer": "BEEN",
+    "clue": "'Have ___ there'"
+   },
+   {
+    "num": 10,
+    "answer": "TAKE",
+    "clue": "Grab"
+   },
+   {
+    "num": 11,
+    "answer": "READ",
+    "clue": "Look at the words"
+   },
+   {
+    "num": 12,
+    "answer": "RESPOND",
+    "clue": "Answer"
+   },
+   {
+    "num": 14,
+    "answer": "SET",
+    "clue": "Ready or fixed"
+   },
+   {
+    "num": 15,
+    "answer": "CLOTHES",
+    "clue": "Things you wear"
+   },
+   {
+    "num": 19,
+    "answer": "GAIN",
+    "clue": "Opposite of loss"
+   },
+   {
+    "num": 20,
+    "answer": "EXIT",
+    "clue": "Way out"
+   },
+   {
+    "num": 22,
+    "answer": "USES",
+    "clue": "Employs"
+   },
+   {
+    "num": 23,
+    "answer": "RATE",
+    "clue": "Speed or price per unit"
+   },
+   {
+    "num": 24,
+    "answer": "YES",
+    "clue": "Opposite of no"
+   },
+   {
+    "num": 25,
+    "answer": "MEN",
+    "clue": "Gentlemen"
+   }
+  ],
+  "down": [
+   {
+    "num": 1,
+    "answer": "ART",
+    "clue": "Painting or sculpture"
+   },
+   {
+    "num": 2,
+    "answer": "REAR",
+    "clue": "Back end"
+   },
+   {
+    "num": 3,
+    "answer": "MAKE",
+    "clue": "Build or create"
+   },
+   {
+    "num": 4,
+    "answer": "SEEN",
+    "clue": "Spotted"
+   },
+   {
+    "num": 5,
+    "answer": "HEAD",
+    "clue": "Top of the body"
+   },
+   {
+    "num": 6,
+    "answer": "END",
+    "clue": "Finish"
+   },
+   {
+    "num": 8,
+    "answer": "LESSONS",
+    "clue": "Classroom sessions"
+   },
+   {
+    "num": 9,
+    "answer": "BROTHER",
+    "clue": "Male sibling"
+   },
+   {
+    "num": 13,
+    "answer": "PET",
+    "clue": "Dog or cat at home"
+   },
+   {
+    "num": 15,
+    "answer": "CASE",
+    "clue": "Suitcase or lawsuit"
+   },
+   {
+    "num": 16,
+    "answer": "LIES",
+    "clue": "Untruths"
+   },
+   {
+    "num": 17,
+    "answer": "EXAM",
+    "clue": "Final test"
+   },
+   {
+    "num": 18,
+    "answer": "SITE",
+    "clue": "Location or website"
+   },
+   {
+    "num": 19,
+    "answer": "GUY",
+    "clue": "Fellow"
+   },
+   {
+    "num": 21,
+    "answer": "TEN",
+    "clue": "Number after nine"
+   }
+  ]
+ },
+ {
+  "id": 13,
+  "grid": [
+   "TEA###SPY",
+   "ARISE#ARE",
+   "GAMMA#LET",
+   "###ATLAS#",
+   "#ALL#ADS#",
+   "#RELAY###",
+   "SEA#DELTA",
+   "AND#DRAWN",
+   "WAS###BOY"
+  ],
+  "across": [
+   {
+    "num": 1,
+    "answer": "TEA",
+    "clue": "Chamomile or Earl Grey"
+   },
+   {
+    "num": 4,
+    "answer": "SPY",
+    "clue": "Secret agent"
+   },
+   {
+    "num": 7,
+    "answer": "ARISE",
+    "clue": "Get up"
+   },
+   {
+    "num": 10,
+    "answer": "ARE",
+    "clue": "Form of 'to be'"
+   },
+   {
+    "num": 11,
+    "answer": "GAMMA",
+    "clue": "Greek letter after beta"
+   },
+   {
+    "num": 12,
+    "answer": "LET",
+    "clue": "Allow"
+   },
+   {
+    "num": 13,
+    "answer": "ATLAS",
+    "clue": "Book of maps"
+   },
+   {
+    "num": 15,
+    "answer": "ALL",
+    "clue": "Everything"
+   },
+   {
+    "num": 17,
+    "answer": "ADS",
+    "clue": "Commercials"
+   },
+   {
+    "num": 18,
+    "answer": "RELAY",
+    "clue": "Team race"
+   },
+   {
+    "num": 20,
+    "answer": "SEA",
+    "clue": "Large body of salt water"
+   },
+   {
+    "num": 21,
+    "answer": "DELTA",
+    "clue": "Greek letter after gamma"
+   },
+   {
+    "num": 25,
+    "answer": "AND",
+    "clue": "Plus"
+   },
+   {
+    "num": 26,
+    "answer": "DRAWN",
+    "clue": "Sketched"
+   },
+   {
+    "num": 27,
+    "answer": "WAS",
+    "clue": "Past tense of 'is'"
+   },
+   {
+    "num": 28,
+    "answer": "BOY",
+    "clue": "Young male"
+   }
+  ],
+  "down": [
+   {
+    "num": 1,
+    "answer": "TAG",
+    "clue": "Price label"
+   },
+   {
+    "num": 2,
+    "answer": "ERA",
+    "clue": "Period in history"
+   },
+   {
+    "num": 3,
+    "answer": "AIM",
+    "clue": "Take a target"
+   },
+   {
+    "num": 4,
+    "answer": "SALAD",
+    "clue": "Bowl of greens"
+   },
+   {
+    "num": 5,
+    "answer": "PRESS",
+    "clue": "Push down on"
+   },
+   {
+    "num": 6,
+    "answer": "YET",
+    "clue": "So far"
+   },
+   {
+    "num": 8,
+    "answer": "SMALL",
+    "clue": "Not big"
+   },
+   {
+    "num": 9,
+    "answer": "EAT",
+    "clue": "Have a meal"
+   },
+   {
+    "num": 14,
+    "answer": "LAYER",
+    "clue": "One level of a cake"
+   },
+   {
+    "num": 15,
+    "answer": "ARENA",
+    "clue": "Stadium"
+   },
+   {
+    "num": 16,
+    "answer": "LEADS",
+    "clue": "Guides"
+   },
+   {
+    "num": 19,
+    "answer": "ADD",
+    "clue": "Sum up"
+   },
+   {
+    "num": 20,
+    "answer": "SAW",
+    "clue": "Cutting tool"
+   },
+   {
+    "num": 22,
+    "answer": "LAB",
+    "clue": "Place for experiments"
+   },
+   {
+    "num": 23,
+    "answer": "TWO",
+    "clue": "Pair"
+   },
+   {
+    "num": 24,
+    "answer": "ANY",
+    "clue": "Whichever"
+   }
+  ]
+ },
+ {
+  "id": 14,
+  "grid": [
+   "TOO###ADD",
+   "WILD##TEA",
+   "OLDER#LAY",
+   "###VOCAL#",
+   "##MILLS##",
+   "#HELLO###",
+   "GET#STRAP",
+   "ARE##HUGE",
+   "PER###NOT"
+  ],
+  "across": [
+   {
+    "num": 1,
+    "answer": "TOO",
+    "clue": "Also"
+   },
+   {
+    "num": 4,
+    "answer": "ADD",
+    "clue": "Sum up"
+   },
+   {
+    "num": 7,
+    "answer": "WILD",
+    "clue": "Untamed"
+   },
+   {
+    "num": 9,
+    "answer": "TEA",
+    "clue": "Chamomile or Earl Grey"
+   },
+   {
+    "num": 10,
+    "answer": "OLDER",
+    "clue": "More aged"
+   },
+   {
+    "num": 12,
+    "answer": "LAY",
+    "clue": "Place down flat"
+   },
+   {
+    "num": 13,
+    "answer": "VOCAL",
+    "clue": "Of the voice"
+   },
+   {
+    "num": 15,
+    "answer": "MILLS",
+    "clue": "Grain grinders"
+   },
+   {
+    "num": 16,
+    "answer": "HELLO",
+    "clue": "Friendly greeting"
+   },
+   {
+    "num": 17,
+    "answer": "GET",
+    "clue": "Obtain"
+   },
+   {
+    "num": 18,
+    "answer": "STRAP",
+    "clue": "Band on a watch"
+   },
+   {
+    "num": 22,
+    "answer": "ARE",
+    "clue": "Form of 'to be'"
+   },
+   {
+    "num": 23,
+    "answer": "HUGE",
+    "clue": "Enormous"
+   },
+   {
+    "num": 24,
+    "answer": "PER",
+    "clue": "For each"
+   },
+   {
+    "num": 25,
+    "answer": "NOT",
+    "clue": "Negative word"
+   }
+  ],
+  "down": [
+   {
+    "num": 1,
+    "answer": "TWO",
+    "clue": "Pair"
+   },
+   {
+    "num": 2,
+    "answer": "OIL",
+    "clue": "Slippery liquid for engines"
+   },
+   {
+    "num": 3,
+    "answer": "OLD",
+    "clue": "Not new"
+   },
+   {
+    "num": 4,
+    "answer": "ATLAS",
+    "clue": "Book of maps"
+   },
+   {
+    "num": 5,
+    "answer": "DEAL",
+    "clue": "Agreement"
+   },
+   {
+    "num": 6,
+    "answer": "DAY",
+    "clue": "Twenty-four hours"
+   },
+   {
+    "num": 8,
+    "answer": "DEVIL",
+    "clue": "Prince of darkness"
+   },
+   {
+    "num": 11,
+    "answer": "ROLLS",
+    "clue": "Dinner breads"
+   },
+   {
+    "num": 14,
+    "answer": "CLOTH",
+    "clue": "Fabric"
+   },
+   {
+    "num": 15,
+    "answer": "METER",
+    "clue": "Unit of length"
+   },
+   {
+    "num": 16,
+    "answer": "HERE",
+    "clue": "Not there"
+   },
+   {
+    "num": 17,
+    "answer": "GAP",
+    "clue": "Space between"
+   },
+   {
+    "num": 19,
+    "answer": "RUN",
+    "clue": "Jog faster"
+   },
+   {
+    "num": 20,
+    "answer": "AGO",
+    "clue": "In the past"
+   },
+   {
+    "num": 21,
+    "answer": "PET",
+    "clue": "Dog or cat at home"
+   }
+  ]
+ },
+ {
+  "id": 15,
+  "grid": [
+   "NOTE##TAG",
+   "ONES##AGE",
+   "RENT##PET",
+   "###ASSESS",
+   "###TEA###",
+   "STREAM###",
+   "ERA##PASS",
+   "LET##LIKE",
+   "FEE##EDIT"
+  ],
+  "across": [
+   {
+    "num": 1,
+    "answer": "NOTE",
+    "clue": "Short message"
+   },
+   {
+    "num": 5,
+    "answer": "TAG",
+    "clue": "Price label"
+   },
+   {
+    "num": 8,
+    "answer": "ONES",
+    "clue": "Single dollars"
+   },
+   {
+    "num": 9,
+    "answer": "AGE",
+    "clue": "Years lived"
+   },
+   {
+    "num": 10,
+    "answer": "RENT",
+    "clue": "Monthly housing payment"
+   },
+   {
+    "num": 11,
+    "answer": "PET",
+    "clue": "Dog or cat at home"
+   },
+   {
+    "num": 12,
+    "answer": "ASSESS",
+    "clue": "Judge the value of"
+   },
+   {
+    "num": 15,
+    "answer": "TEA",
+    "clue": "Chamomile or Earl Grey"
+   },
+   {
+    "num": 16,
+    "answer": "STREAM",
+    "clue": "Small river"
+   },
+   {
+    "num": 19,
+    "answer": "ERA",
+    "clue": "Period in history"
+   },
+   {
+    "num": 20,
+    "answer": "PASS",
+    "clue": "Go by"
+   },
+   {
+    "num": 24,
+    "answer": "LET",
+    "clue": "Allow"
+   },
+   {
+    "num": 25,
+    "answer": "LIKE",
+    "clue": "Enjoy"
+   },
+   {
+    "num": 26,
+    "answer": "FEE",
+    "clue": "Charge for a service"
+   },
+   {
+    "num": 27,
+    "answer": "EDIT",
+    "clue": "Revise text"
+   }
+  ],
+  "down": [
+   {
+    "num": 1,
+    "answer": "NOR",
+    "clue": "Partner of 'neither'"
+   },
+   {
+    "num": 2,
+    "answer": "ONE",
+    "clue": "Single"
+   },
+   {
+    "num": 3,
+    "answer": "TEN",
+    "clue": "Number after nine"
+   },
+   {
+    "num": 4,
+    "answer": "ESTATE",
+    "clue": "Large property"
+   },
+   {
+    "num": 5,
+    "answer": "TAPE",
+    "clue": "Sticky roll"
+   },
+   {
+    "num": 6,
+    "answer": "AGES",
+    "clue": "Eras"
+   },
+   {
+    "num": 7,
+    "answer": "GETS",
+    "clue": "Receives"
+   },
+   {
+    "num": 13,
+    "answer": "SEA",
+    "clue": "Large body of salt water"
+   },
+   {
+    "num": 14,
+    "answer": "SAMPLE",
+    "clue": "Small taste"
+   },
+   {
+    "num": 16,
+    "answer": "SELF",
+    "clue": "Your own person"
+   },
+   {
+    "num": 17,
+    "answer": "TREE",
+    "clue": "Oak or maple"
+   },
+   {
+    "num": 18,
+    "answer": "RATE",
+    "clue": "Speed or price per unit"
+   },
+   {
+    "num": 21,
+    "answer": "AID",
+    "clue": "Help"
+   },
+   {
+    "num": 22,
+    "answer": "SKI",
+    "clue": "Snow glider"
+   },
+   {
+    "num": 23,
+    "answer": "SET",
+    "clue": "Ready or fixed"
+   }
+  ]
+ },
+ {
+  "id": 16,
+  "grid": [
+   "CAT###FEE",
+   "ARE##PLAY",
+   "PEER#HATE",
+   "#ANALOG##",
+   "###TEN###",
+   "##WIDELY#",
+   "TWIN#SEED",
+   "WING##FAR",
+   "ONE###TRY"
+  ],
+  "across": [
+   {
+    "num": 1,
+    "answer": "CAT",
+    "clue": "Pet that purrs"
+   },
+   {
+    "num": 4,
+    "answer": "FEE",
+    "clue": "Charge for a service"
+   },
+   {
+    "num": 7,
+    "answer": "ARE",
+    "clue": "Form of 'to be'"
+   },
+   {
+    "num": 8,
+    "answer": "PLAY",
+    "clue": "Have fun"
+   },
+   {
+    "num": 9,
+    "answer": "PEER",
+    "clue": "Equal"
+   },
+   {
+    "num": 11,
+    "answer": "HATE",
+    "clue": "Strongly dislike"
+   },
+   {
+    "num": 12,
+    "answer": "ANALOG",
+    "clue": "Not digital"
+   },
+   {
+    "num": 14,
+    "answer": "TEN",
+    "clue": "Number after nine"
+   },
+   {
+    "num": 15,
+    "answer": "WIDELY",
+    "clue": "Over a large area"
+   },
+   {
+    "num": 18,
+    "answer": "TWIN",
+    "clue": "One of a matched pair"
+   },
+   {
+    "num": 20,
+    "answer": "SEED",
+    "clue": "Plant starter"
+   },
+   {
+    "num": 22,
+    "answer": "WING",
+    "clue": "Bird's flapper"
+   },
+   {
+    "num": 23,
+    "answer": "FAR",
+    "clue": "Not near"
+   },
+   {
+    "num": 24,
+    "answer": "ONE",
+    "clue": "Single"
+   },
+   {
+    "num": 25,
+    "answer": "TRY",
+    "clue": "Attempt"
+   }
+  ],
+  "down": [
+   {
+    "num": 1,
+    "answer": "CAP",
+    "clue": "Baseball hat"
+   },
+   {
+    "num": 2,
+    "answer": "AREA",
+    "clue": "Region or zone"
+   },
+   {
+    "num": 3,
+    "answer": "TEEN",
+    "clue": "Thirteen to nineteen"
+   },
+   {
+    "num": 4,
+    "answer": "FLAG",
+    "clue": "Banner on a pole"
+   },
+   {
+    "num": 5,
+    "answer": "EAT",
+    "clue": "Have a meal"
+   },
+   {
+    "num": 6,
+    "answer": "EYE",
+    "clue": "Organ of sight"
+   },
+   {
+    "num": 8,
+    "answer": "PHONES",
+    "clue": "Handheld callers"
+   },
+   {
+    "num": 10,
+    "answer": "RATING",
+    "clue": "Score out of five"
+   },
+   {
+    "num": 13,
+    "answer": "LED",
+    "clue": "Guided"
+   },
+   {
+    "num": 15,
+    "answer": "WINE",
+    "clue": "Grape drink"
+   },
+   {
+    "num": 16,
+    "answer": "LEFT",
+    "clue": "Opposite of right"
+   },
+   {
+    "num": 17,
+    "answer": "YEAR",
+    "clue": "Twelve months"
+   },
+   {
+    "num": 18,
+    "answer": "TWO",
+    "clue": "Pair"
+   },
+   {
+    "num": 19,
+    "answer": "WIN",
+    "clue": "Come in first"
+   },
+   {
+    "num": 21,
+    "answer": "DRY",
+    "clue": "Not wet"
+   }
+  ]
+ },
+ {
+  "id": 17,
+  "grid": [
+   "GAS###PUT",
+   "AGES##USE",
+   "PEAK#AREA",
+   "##TITLES#",
+   "###LOW###",
+   "#RELOAD##",
+   "WAYS#YARD",
+   "ARE##STAR",
+   "YES###ANY"
+  ],
+  "across": [
+   {
+    "num": 1,
+    "answer": "GAS",
+    "clue": "Fuel at the pump"
+   },
+   {
+    "num": 4,
+    "answer": "PUT",
+    "clue": "Place or set"
+   },
+   {
+    "num": 7,
+    "answer": "AGES",
+    "clue": "Eras"
+   },
+   {
+    "num": 9,
+    "answer": "USE",
+    "clue": "Employ"
+   },
+   {
+    "num": 10,
+    "answer": "PEAK",
+    "clue": "Mountaintop"
+   },
+   {
+    "num": 11,
+    "answer": "AREA",
+    "clue": "Region or zone"
+   },
+   {
+    "num": 12,
+    "answer": "TITLES",
+    "clue": "Names of books"
+   },
+   {
+    "num": 14,
+    "answer": "LOW",
+    "clue": "Not high"
+   },
+   {
+    "num": 15,
+    "answer": "RELOAD",
+    "clue": "Fill the chamber again"
+   },
+   {
+    "num": 18,
+    "answer": "WAYS",
+    "clue": "Methods"
+   },
+   {
+    "num": 19,
+    "answer": "YARD",
+    "clue": "Three feet"
+   },
+   {
+    "num": 22,
+    "answer": "ARE",
+    "clue": "Form of 'to be'"
+   },
+   {
+    "num": 23,
+    "answer": "STAR",
+    "clue": "Twinkler in the night sky"
+   },
+   {
+    "num": 24,
+    "answer": "YES",
+    "clue": "Opposite of no"
+   },
+   {
+    "num": 25,
+    "answer": "ANY",
+    "clue": "Whichever"
+   }
+  ],
+  "down": [
+   {
+    "num": 1,
+    "answer": "GAP",
+    "clue": "Space between"
+   },
+   {
+    "num": 2,
+    "answer": "AGE",
+    "clue": "Years lived"
+   },
+   {
+    "num": 3,
+    "answer": "SEAT",
+    "clue": "Chair"
+   },
+   {
+    "num": 4,
+    "answer": "PURE",
+    "clue": "Unmixed"
+   },
+   {
+    "num": 5,
+    "answer": "USES",
+    "clue": "Employs"
+   },
+   {
+    "num": 6,
+    "answer": "TEA",
+    "clue": "Chamomile or Earl Grey"
+   },
+   {
+    "num": 8,
+    "answer": "SKILLS",
+    "clue": "Abilities"
+   },
+   {
+    "num": 11,
+    "answer": "ALWAYS",
+    "clue": "Every time"
+   },
+   {
+    "num": 13,
+    "answer": "TOO",
+    "clue": "Also"
+   },
+   {
+    "num": 15,
+    "answer": "RARE",
+    "clue": "Seldom seen"
+   },
+   {
+    "num": 16,
+    "answer": "EYES",
+    "clue": "Sight organs"
+   },
+   {
+    "num": 17,
+    "answer": "DATA",
+    "clue": "Facts and figures"
+   },
+   {
+    "num": 18,
+    "answer": "WAY",
+    "clue": "Path"
+   },
+   {
+    "num": 20,
+    "answer": "RAN",
+    "clue": "Sprinted"
+   },
+   {
+    "num": 21,
+    "answer": "DRY",
+    "clue": "Not wet"
+   }
+  ]
+ },
+ {
+  "id": 18,
+  "grid": [
+   "ADD###RAY",
+   "NOR##FIRE",
+   "DEAD#ACTS",
+   "#SWITCH##",
+   "###GOT###",
+   "##REPORT#",
+   "THIS#ROOT",
+   "EAST##ONE",
+   "ASK###MEN"
+  ],
+  "across": [
+   {
+    "num": 1,
+    "answer": "ADD",
+    "clue": "Sum up"
+   },
+   {
+    "num": 4,
+    "answer": "RAY",
+    "clue": "Beam of light"
+   },
+   {
+    "num": 7,
+    "answer": "NOR",
+    "clue": "Partner of 'neither'"
+   },
+   {
+    "num": 8,
+    "answer": "FIRE",
+    "clue": "Burning blaze"
+   },
+   {
+    "num": 9,
+    "answer": "DEAD",
+    "clue": "No longer living"
+   },
+   {
+    "num": 11,
+    "answer": "ACTS",
+    "clue": "Performs"
+   },
+   {
+    "num": 12,
+    "answer": "SWITCH",
+    "clue": "Light flipper"
+   },
+   {
+    "num": 14,
+    "answer": "GOT",
+    "clue": "Received"
+   },
+   {
+    "num": 15,
+    "answer": "REPORT",
+    "clue": "Written account"
+   },
+   {
+    "num": 18,
+    "answer": "THIS",
+    "clue": "Not that"
+   },
+   {
+    "num": 20,
+    "answer": "ROOT",
+    "clue": "Underground part of a plant"
+   },
+   {
+    "num": 22,
+    "answer": "EAST",
+    "clue": "Direction of sunrise"
+   },
+   {
+    "num": 23,
+    "answer": "ONE",
+    "clue": "Single"
+   },
+   {
+    "num": 24,
+    "answer": "ASK",
+    "clue": "Pose a question"
+   },
+   {
+    "num": 25,
+    "answer": "MEN",
+    "clue": "Gentlemen"
+   }
+  ],
+  "down": [
+   {
+    "num": 1,
+    "answer": "AND",
+    "clue": "Plus"
+   },
+   {
+    "num": 2,
+    "answer": "DOES",
+    "clue": "Performs"
+   },
+   {
+    "num": 3,
+    "answer": "DRAW",
+    "clue": "Sketch"
+   },
+   {
+    "num": 4,
+    "answer": "RICH",
+    "clue": "Wealthy"
+   },
+   {
+    "num": 5,
+    "answer": "ART",
+    "clue": "Painting or sculpture"
+   },
+   {
+    "num": 6,
+    "answer": "YES",
+    "clue": "Opposite of no"
+   },
+   {
+    "num": 8,
+    "answer": "FACTOR",
+    "clue": "Contributing element"
+   },
+   {
+    "num": 10,
+    "answer": "DIGEST",
+    "clue": "Break down food"
+   },
+   {
+    "num": 13,
+    "answer": "TOP",
+    "clue": "Highest point"
+   },
+   {
+    "num": 15,
+    "answer": "RISK",
+    "clue": "Chance of loss"
+   },
+   {
+    "num": 16,
+    "answer": "ROOM",
+    "clue": "Space in a house"
+   },
+   {
+    "num": 17,
+    "answer": "TONE",
+    "clue": "Quality of sound"
+   },
+   {
+    "num": 18,
+    "answer": "TEA",
+    "clue": "Chamomile or Earl Grey"
+   },
+   {
+    "num": 19,
+    "answer": "HAS",
+    "clue": "Owns"
+   },
+   {
+    "num": 21,
+    "answer": "TEN",
+    "clue": "Number after nine"
+   }
+  ]
+ },
+ {
+  "id": 19,
+  "grid": [
+   "AGE###SHE",
+   "GAVE##LAY",
+   "OPEN#LOVE",
+   "##REBATE#",
+   "###RAY###",
+   "#LOGGED##",
+   "TINY#RISE",
+   "ONE##SEEN",
+   "YES###DAD"
+  ],
+  "across": [
+   {
+    "num": 1,
+    "answer": "AGE",
+    "clue": "Years lived"
+   },
+   {
+    "num": 4,
+    "answer": "SHE",
+    "clue": "Female pronoun"
+   },
+   {
+    "num": 7,
+    "answer": "GAVE",
+    "clue": "Handed over"
+   },
+   {
+    "num": 9,
+    "answer": "LAY",
+    "clue": "Place down flat"
+   },
+   {
+    "num": 10,
+    "answer": "OPEN",
+    "clue": "Not closed"
+   },
+   {
+    "num": 11,
+    "answer": "LOVE",
+    "clue": "Deep affection"
+   },
+   {
+    "num": 12,
+    "answer": "REBATE",
+    "clue": "Money back"
+   },
+   {
+    "num": 14,
+    "answer": "RAY",
+    "clue": "Beam of light"
+   },
+   {
+    "num": 15,
+    "answer": "LOGGED",
+    "clue": "Recorded"
+   },
+   {
+    "num": 18,
+    "answer": "TINY",
+    "clue": "Very small"
+   },
+   {
+    "num": 19,
+    "answer": "RISE",
+    "clue": "Go up"
+   },
+   {
+    "num": 22,
+    "answer": "ONE",
+    "clue": "Single"
+   },
+   {
+    "num": 23,
+    "answer": "SEEN",
+    "clue": "Spotted"
+   },
+   {
+    "num": 24,
+    "answer": "YES",
+    "clue": "Opposite of no"
+   },
+   {
+    "num": 25,
+    "answer": "DAD",
+    "clue": "Father"
+   }
+  ],
+  "down": [
+   {
+    "num": 1,
+    "answer": "AGO",
+    "clue": "In the past"
+   },
+   {
+    "num": 2,
+    "answer": "GAP",
+    "clue": "Space between"
+   },
+   {
+    "num": 3,
+    "answer": "EVER",
+    "clue": "At any time"
+   },
+   {
+    "num": 4,
+    "answer": "SLOT",
+    "clue": "Narrow opening"
+   },
+   {
+    "num": 5,
+    "answer": "HAVE",
+    "clue": "Own"
+   },
+   {
+    "num": 6,
+    "answer": "EYE",
+    "clue": "Organ of sight"
+   },
+   {
+    "num": 8,
+    "answer": "ENERGY",
+    "clue": "Power to do work"
+   },
+   {
+    "num": 11,
+    "answer": "LAYERS",
+    "clue": "Levels"
+   },
+   {
+    "num": 13,
+    "answer": "BAG",
+    "clue": "Sack"
+   },
+   {
+    "num": 15,
+    "answer": "LINE",
+    "clue": "Row"
+   },
+   {
+    "num": 16,
+    "answer": "ONES",
+    "clue": "Single dollars"
+   },
+   {
+    "num": 17,
+    "answer": "DIED",
+    "clue": "Passed away"
+   },
+   {
+    "num": 18,
+    "answer": "TOY",
+    "clue": "Plaything"
+   },
+   {
+    "num": 20,
+    "answer": "SEA",
+    "clue": "Large body of salt water"
+   },
+   {
+    "num": 21,
+    "answer": "END",
+    "clue": "Finish"
+   }
+  ]
+ },
+ {
+  "id": 20,
+  "grid": [
+   "OUT###GAS",
+   "USE##WALK",
+   "REST#ONLY",
+   "#STRONG##",
+   "###AID###",
+   "##SILENT#",
+   "BEEN#ROOT",
+   "EYES##DUE",
+   "TEN###ERA"
+  ],
+  "across": [
+   {
+    "num": 1,
+    "answer": "OUT",
+    "clue": "Not in"
+   },
+   {
+    "num": 4,
+    "answer": "GAS",
+    "clue": "Fuel at the pump"
+   },
+   {
+    "num": 7,
+    "answer": "USE",
+    "clue": "Employ"
+   },
+   {
+    "num": 8,
+    "answer": "WALK",
+    "clue": "Stroll"
+   },
+   {
+    "num": 9,
+    "answer": "REST",
+    "clue": "Take a break"
+   },
+   {
+    "num": 11,
+    "answer": "ONLY",
+    "clue": "Just"
+   },
+   {
+    "num": 12,
+    "answer": "STRONG",
+    "clue": "Mighty"
+   },
+   {
+    "num": 14,
+    "answer": "AID",
+    "clue": "Help"
+   },
+   {
+    "num": 15,
+    "answer": "SILENT",
+    "clue": "Without a sound"
+   },
+   {
+    "num": 18,
+    "answer": "BEEN",
+    "clue": "'Have ___ there'"
+   },
+   {
+    "num": 20,
+    "answer": "ROOT",
+    "clue": "Underground part of a plant"
+   },
+   {
+    "num": 22,
+    "answer": "EYES",
+    "clue": "Sight organs"
+   },
+   {
+    "num": 23,
+    "answer": "DUE",
+    "clue": "Expected"
+   },
+   {
+    "num": 24,
+    "answer": "TEN",
+    "clue": "Number after nine"
+   },
+   {
+    "num": 25,
+    "answer": "ERA",
+    "clue": "Period in history"
+   }
+  ],
+  "down": [
+   {
+    "num": 1,
+    "answer": "OUR",
+    "clue": "Belonging to us"
+   },
+   {
+    "num": 2,
+    "answer": "USES",
+    "clue": "Employs"
+   },
+   {
+    "num": 3,
+    "answer": "TEST",
+    "clue": "Quiz"
+   },
+   {
+    "num": 4,
+    "answer": "GANG",
+    "clue": "Group of pals"
+   },
+   {
+    "num": 5,
+    "answer": "ALL",
+    "clue": "Everything"
+   },
+   {
+    "num": 6,
+    "answer": "SKY",
+    "clue": "Place for clouds"
+   },
+   {
+    "num": 8,
+    "answer": "WONDER",
+    "clue": "Marvel"
+   },
+   {
+    "num": 10,
+    "answer": "TRAINS",
+    "clue": "Rail vehicles"
+   },
+   {
+    "num": 13,
+    "answer": "OIL",
+    "clue": "Slippery liquid for engines"
+   },
+   {
+    "num": 15,
+    "answer": "SEEN",
+    "clue": "Spotted"
+   },
+   {
+    "num": 16,
+    "answer": "NODE",
+    "clue": "Point of connection"
+   },
+   {
+    "num": 17,
+    "answer": "TOUR",
+    "clue": "Guided trip"
+   },
+   {
+    "num": 18,
+    "answer": "BET",
+    "clue": "Wager"
+   },
+   {
+    "num": 19,
+    "answer": "EYE",
+    "clue": "Organ of sight"
+   },
+   {
+    "num": 21,
+    "answer": "TEA",
+    "clue": "Chamomile or Earl Grey"
+   }
+  ]
+ }
+]
