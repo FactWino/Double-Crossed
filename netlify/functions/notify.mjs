@@ -27,7 +27,7 @@ export default async () => {
       const sub = await subs.get(key + ":" + p.seat, { type: "json" });
       if (!sub) { await pending.delete(key); continue; }
       const payload = JSON.stringify({
-        title: "Crossword Duel",
+        title: "KleptoCross",
         body: "It’s your turn! Your friend has played.",
         url: "/?game=" + key + "&k=" + g.seats[p.seat],
         tag: key,
