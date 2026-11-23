@@ -2,7 +2,7 @@
 self.addEventListener("push", (e) => {
   let d = {};
   try { d = e.data.json(); } catch (_) {}
-  e.waitUntil(self.registration.showNotification(d.title || "Klepto Cross", {
+  e.waitUntil(self.registration.showNotification(d.title || "KleptoCross", {
     body: d.body || "It’s your turn!", tag: d.tag || "turn", data: { url: d.url || "/" },
     icon: "/icon-192.png", badge: "/icon-192.png",
   }));
