@@ -36,8 +36,12 @@ body{margin:0;background:var(--bg);color:var(--ink);font-family:system-ui,-apple
 .pop{position:fixed;z-index:8;pointer-events:none;font:900 22px Georgia,serif;opacity:0;transform:translate(-60%,-60%);animation:pp 1.6s ease both;text-shadow:0 0 6px var(--bg),0 0 6px var(--bg),0 1px 0 var(--bg)}
 .pop.st::before{content:"";position:absolute;left:50%;top:50%;width:64px;height:64px;margin:-32px 0 0 -32px;z-index:-1;opacity:.35;background:repeating-conic-gradient(currentColor 0 7deg,transparent 7deg 30deg);-webkit-mask:radial-gradient(circle,transparent 26%,#000 30%,transparent 72%);mask:radial-gradient(circle,transparent 26%,#000 30%,transparent 72%)}
 @keyframes pp{0%{opacity:0;transform:translate(-60%,-40%) scale(.5)}20%{opacity:1;transform:translate(-60%,-60%) scale(1.2)}70%{opacity:1;transform:translate(-60%,-90%) scale(1)}100%{opacity:0;transform:translate(-60%,-130%) scale(1)}}
-.flash{position:fixed;left:0;right:0;top:34%;text-align:center;font:900 44px Georgia,serif;letter-spacing:2px;pointer-events:none;z-index:9;opacity:0;animation:fl 1.8s ease both;text-shadow:0 0 10px var(--bg),0 2px 0 var(--bg)}
-@keyframes fl{0%{opacity:0;transform:scale(.6)}30%,60%{opacity:1;transform:scale(1.35)}100%{opacity:0;transform:scale(1)}}
+.pop.stl{width:max-content;max-width:min(320px,86vw);animation:ps 2.7s ease both}
+.pop.stl::before{width:170px;height:170px;margin:-85px 0 0 -85px}
+@keyframes ps{0%{opacity:0;transform:translate(-50%,-30%) scale(.5)}12%{opacity:1;transform:translate(-50%,-50%) scale(1.12)}20%,80%{opacity:1;transform:translate(-50%,-50%) scale(1)}100%{opacity:0;transform:translate(-50%,-80%) scale(1)}}
+.sc{display:block;background:var(--card);border:3px solid currentColor;border-radius:14px;padding:8px 16px;text-align:center;box-shadow:0 6px 20px rgba(0,0,0,.25)}
+.sc small{display:block;font:700 15px system-ui,sans-serif;color:var(--ink);line-height:1.3}
+.sc b{display:block;font:900 30px Georgia,serif;line-height:1.1}
 .c.o0{color:var(--p1)}.c.o1{color:var(--p2)}
 .c.s.o0{background:var(--p1t)}.c.s.o1{background:var(--p2t)}
 .c i{position:absolute;top:1px;left:2px;font:600 9px system-ui;font-style:normal;color:var(--mut)}
@@ -101,6 +105,25 @@ button:focus-visible{outline:3px solid var(--ink);outline-offset:2px}
 @keyframes tn{0%,35%{background:var(--p1t)}45%,90%{background:var(--p2t)}100%{background:var(--p1t)}}
 .tt{margin:16px auto;max-width:260px;background:var(--ink);color:var(--bg);padding:10px 14px;border-radius:12px;font:600 15px system-ui,sans-serif;animation:ttn 6s infinite both}
 @keyframes ttn{0%,5%{transform:translateY(-30px);opacity:0}12%,55%{transform:none;opacity:1}75%,100%{transform:translateX(120px);opacity:0}}
+.c.hn{color:var(--mut)}
+#box{max-height:calc(100vh - 48px);overflow-y:auto}
+#box>*{flex-shrink:0}
+#box ul{margin:0;padding-left:20px;display:flex;flex-direction:column;gap:7px;font-size:15px;line-height:1.4}
+.big.two{height:auto;padding:11px 16px;text-align:left}
+.big.two small{display:block;margin-top:2px;font:500 13px system-ui,sans-serif;opacity:.8}
+.sg{display:grid;grid-template-columns:repeat(5,38px);grid-template-rows:repeat(3,38px);gap:3px;justify-content:center;margin:16px 0 6px}
+.sg .mc.me{color:var(--p1);animation:sj 7s infinite both}
+.sg .mc.ow{animation:sk 7s infinite both}
+.sg .mc b.t1{animation:s1 7s infinite both}.sg .mc b.t2{animation:s2 7s infinite both}.sg .mc b.t3{animation:s3 7s infinite both}
+@keyframes s1{0%,8%{opacity:0;transform:scale(.4)}12%{opacity:1;transform:scale(1.25)}16%,93%{opacity:1;transform:scale(1)}98%,100%{opacity:0}}
+@keyframes s2{0%,22%{opacity:0;transform:scale(.4)}26%{opacity:1;transform:scale(1.25)}30%,93%{opacity:1;transform:scale(1)}98%,100%{opacity:0}}
+@keyframes s3{0%,36%{opacity:0;transform:scale(.4)}40%{opacity:1;transform:scale(1.25)}44%,93%{opacity:1;transform:scale(1)}98%,100%{opacity:0}}
+@keyframes sk{0%,52%{background:var(--p2t);color:var(--p2)}58%,93%{background:var(--p1t);color:var(--p1)}98%,100%{background:var(--p2t);color:var(--p2)}}
+@keyframes sj{0%,52%{background:var(--card)}58%,93%{background:var(--p1t)}98%,100%{background:var(--card)}}
+.spw{height:84px;display:flex;justify-content:center;align-items:center}
+.sp{position:relative;opacity:0;animation:spo 7s infinite both}
+.sp.st::before{width:130px;height:130px;margin:-65px 0 0 -65px}
+@keyframes spo{0%,56%{opacity:0;transform:translateY(8px) scale(.5)}62%{opacity:1;transform:scale(1.12)}66%,88%{opacity:1;transform:none}94%,100%{opacity:0;transform:translateY(-14px)}}
 </style>
 </head>
 <body>
@@ -140,25 +163,27 @@ for(let r=0;r<N;r++)for(let c=0;c<N;c++){if(!white(r,c))continue;
 build(pn0);
 
 const API="/api/game";
-let L,turn,left,score,solved,cur,pend,award,PP,msg,over,overShown,note="",online=null,timer=null,ev=null,lastEv=null,lastPopId=0;
+let L,turn,left,score,solved,cur,pend,award,PP,msg,over,overShown,note="",online=null,timer=null,lastPopId=0,MODE="three",PC=0,lastPingAt=0,PS=0;
 const setNames=()=>{NAMES=[PN[0]||ICONS.D[IC[0]].s,PN[1]||ICONS.D[IC[1]].s]};
 const cleanName=t=>String(t||"").replace(/[\u0000-\u001f<>&"]/g," ").replace(/\s+/g," ").trim().slice(0,16);
 function askName(next){let v="";try{v=cleanName(localStorage.getItem("kc-name"))}catch(e){}
  ask('<h1>What’s your name?</h1><p>Your friend will see it next to your score. You’ll be given a random icon.</p><input id="pn" maxlength="16" value="'+v+'" placeholder="Your name" autocomplete="off" autocapitalize="words" style="width:100%;box-sizing:border-box;font:18px system-ui,sans-serif;padding:10px 12px;border-radius:10px;border:1px solid var(--line);background:var(--card);color:var(--ink)">',[["Continue",()=>{MYN=cleanName(document.getElementById("pn").value);try{localStorage.setItem("kc-name",MYN)}catch(e){}next()}]])}
 const pd=i=>DN[DIR[i]==="A"?0:1];
-const myTurn=()=>!online||turn===online.seat;
+const myTurn=()=>!online||MODE==="h2h"||turn===online.seat;
+const me=()=>online?online.seat:turn;
 const viewer=()=>online?online.seat:turn;
-function start(){L=Array.from({length:N},()=>Array(N).fill(null));turn=0;left=3;score=[0,0];solved=new Set();pend=[];award=Array(slots.length).fill(null);PP=[];msg="";over=false;overShown=false;ev=null;pick(null)}
+function start(){L=Array.from({length:N},()=>Array(N).fill(null));turn=0;left=3;score=[0,0];solved=new Set();pend=[];award=Array(slots.length).fill(null);PP=[];msg="";over=false;overShown=false;PC=0;PS=0;pick(null)}
 const mine=()=>slots.filter(s=>s.dir===DIR[viewer()]&&!solved.has(s));
 const isP=(r,c)=>pend.findIndex(p=>p.r===r&&p.c===c);
 const at=(r,c)=>["A","D"].map(d=>cw[r+","+c][d]).filter(Boolean);
-const canTry=(r,c)=>{const v=L[r][c];return !v||isP(r,c)>=0||v.a===turn||at(r,c).some(s=>solved.has(s))};
+const canTry=(r,c)=>{const v=L[r][c];return !v||isP(r,c)>=0||v.a===me()||at(r,c).some(s=>solved.has(s))};
 function pick(w){const l=mine();w=w||l[0];if(!w){cur=null;return}cur={w,cell:w.cells.find(([r,c])=>!L[r][c])||w.cells[0]}}
 function sel(r,c){const w=cw[r+","+c][DIR[viewer()]];if(!w)return;cur={w,cell:[r,c]};msg="";render()}
 function cycle(d){const l=mine();if(!l.length)return;let i=l.indexOf(cur&&cur.w);i=(i+d+l.length)%l.length;pick(l[i]);render()}
-function type(ch){if(over||!cur||!myTurn()||(online&&!online.joined))return;const [r,c]=cur.cell;
+function type(ch){if(over||!cur||!myTurn()||(online&&!online.joined))return;const [r,c]=cur.cell;if(MODE==="h2h")return typeH(ch);
+ if(L[r][c]&&L[r][c].h&&isP(r,c)<0){msg="That letter is a hint, and it’s already right.";return render()}
  if(isP(r,c)<0){
-  if(pend.length>=3){msg="That’s your 3 letters. Tap one you placed to change it, or tap Submit.";return render()}
+  if(MODE==="three"&&pend.length>=3){msg="That’s your 3 letters. Tap one you placed to change it, or tap Submit.";return render()}
   if(!canTry(r,c)){msg="That letter is your friend’s. It can only change once its word is full.";return render()}
   pend.push({r,c,prev:L[r][c]})}
  L[r][c]={ch,o:turn,a:turn};left=3-pend.length;msg="";
@@ -167,12 +192,12 @@ function type(ch){if(over||!cur||!myTurn()||(online&&!online.joined))return;cons
  render()}
 function back(){if(over||!myTurn()||!pend.length)return;let i=cur?isP(cur.cell[0],cur.cell[1]):-1;if(i<0)i=pend.length-1;
  const p=pend.splice(i,1)[0];L[p.r][p.c]=p.prev;left=3-pend.length;cur={w:cw[p.r+","+p.c][DIR[turn]],cell:[p.r,p.c]};msg="";render()}
-function submit(){if(over||!myTurn()||(online&&!online.joined))return;
- const P=turn,Q=1-P,before=[score[0],score[1]],id=Date.now();
- const last=pend.length?[pend[pend.length-1].r,pend[pend.length-1].c]:null;
- let locked=0,steal=false;const cleared=[],corr=[];
+const nid=()=>++PC,sg=n=>(n<0?"−":"+")+Math.abs(n);
+const isOver=()=>L.every((row,r)=>row.every((v,c)=>G[r][c]==="#"||(v&&v.ch===G[r][c])));
+// Scores whatever the letters in pl just did, for player P. Used by Submit and by head to head moves.
+function settle(P,pl){const before=[score[0],score[1]];let locked=0;const cleared=[],corr=[],stolen=[];
  // a letter typed over an already-correct letter changes nothing
- pend.forEach(p=>{if(!p.prev)return;const t=G[p.r][p.c];if(p.prev.ch===t){L[p.r][p.c]=p.prev;locked++}else if(L[p.r][p.c].ch===t)corr.push(p)});
+ pl.forEach(p=>{if(!p.prev)return;const t=G[p.r][p.c];if(p.prev.ch===t){L[p.r][p.c]=p.prev;locked++}else if(L[p.r][p.c].ch===t)corr.push(p)});
  // fixing a wrong letter wipes every wrong letter in that word
  corr.forEach(p=>at(p.r,p.c).filter(s=>solved.has(s)).forEach(s=>s.cells.forEach(([x,y])=>{if(L[x][y]&&L[x][y].ch!==G[x][y]){L[x][y]=null;cleared.push([x,y])}})));
  // fixing a letter your friend got wrong earns a small bonus
@@ -181,68 +206,131 @@ function submit(){if(over||!myTurn()||(online&&!online.joined))return;
  const und=new Set();cleared.forEach(([x,y])=>at(x,y).forEach(w=>{if(solved.has(w))und.add(w)}));
  und.forEach(w=>{const i=slots.indexOf(w),a=award[i];solved.delete(w);if(a){score[a.w]-=a.p;award[i]=null}});
  // full words score as if correct
- slots.forEach((w,i)=>{if(!solved.has(w)&&w.cells.every(([x,y])=>L[x][y])){const st=w.dir!==DIR[P],pt=(st?15:10)+w.cells.length;score[P]+=pt;solved.add(w);award[i]={w:P,p:pt};if(st){steal=true;w.cells.forEach(([x,y])=>{L[x][y].o=P})}}});
- const d=[score[0]-before[0],score[1]-before[1]],sg=n=>(n<0?"−":"+")+Math.abs(n),pops=[];
- if(last)pops.push({id,txt:sg(d[P]),o:P,r:last[0],c:last[1],k:d[P]<0?"ng":(steal?"st":"")});
- if(d[Q]<0&&cleared.length)pops.push({id:id+1,txt:sg(d[Q]),o:Q,r:cleared[0][0],c:cleared[0][1],k:"ng"});
- msg=NAMES[P]+" "+(d[P]<0?"lost "+Math.abs(d[P]):"scored "+d[P])+(steal?" with a steal":"")+"."+(cleared.length?" Wrong letters were removed from a word.":"")+(corr.some(p=>p.prev.a!==P)?" +3 for each of "+NAMES[Q]+"’s wrong letters fixed.":"");
- ev=steal?{id,txt:"STOLEN! "+sg(d[P]),o:P}:null;if(ev)lastEv=id;
- over=L.every((row,r)=>row.every((v,c)=>G[r][c]==="#"||(v&&v.ch===G[r][c])));
- PP=pops;lastPopId=id+1;pend=[];left=3;if(!over)turn=Q;
+ slots.forEach((w,i)=>{if(!solved.has(w)&&w.cells.every(([x,y])=>L[x][y])){const st=w.dir!==DIR[P],pt=(st?15:10)+w.cells.length;score[P]+=pt;solved.add(w);award[i]={w:P,p:pt};if(st){stolen.push(w.cells.map(([x,y])=>L[x][y].ch).join(""));w.cells.forEach(([x,y])=>{L[x][y].o=P})}}});
+ return{locked,cleared,corr,stolen,d:[score[0]-before[0],score[1]-before[1]]}}
+function mkPops(P,r,last){const Q=1-P,d=r.d,pops=[];
+ if(last){if(r.stolen.length&&d[P]>=0)pops.push({id:nid(),by:P,txt:sg(d[P]),o:P,r:last[0],c:last[1],k:"stl",nm:NAMES[P],wd:r.stolen});
+  else pops.push({id:nid(),by:P,txt:sg(d[P]),o:P,r:last[0],c:last[1],k:d[P]<0?"ng":""})}
+ if(d[Q]<0&&r.cleared.length)pops.push({id:nid(),by:P,txt:sg(d[Q]),o:Q,r:r.cleared[0][0],c:r.cleared[0][1],k:"ng"});
+ return pops}
+function submit(){if(over||!myTurn()||(online&&!online.joined))return;
+ const P=turn,Q=1-P,last=pend.length?[pend[pend.length-1].r,pend[pend.length-1].c]:null;
+ const r=settle(P,pend),d=r.d,steal=r.stolen.length>0,pops=mkPops(P,r,last);
+ msg=NAMES[P]+" "+(d[P]<0?"lost "+Math.abs(d[P]):"scored "+d[P])+(steal?" with a steal":"")+"."+(r.cleared.length?" Wrong letters were removed from a word.":"")+(r.corr.some(p=>p.prev.a!==P)?" +3 for each of "+NAMES[Q]+"’s wrong letters fixed.":"");
+ over=isOver();
+ PS=pend.length?0:PS+1;
+ if(PS>=2){PS=0;const hc=giveHint();if(hc){pops.push({id:nid(),by:P,txt:"💡",o:P,r:hc[0],c:hc[1],k:"hn"});msg+=" Nobody played, so a hint letter was added."}}
+ PP=pops;lastPopId=PC;pend=[];left=3;if(!over)turn=Q;
  sync();
- if(locked)msg+=" "+locked+" of your letters "+(locked>1?"were":"was")+" already right, so nothing changed.";
- pick(null);render();showPops(pops);if(ev)flash(ev)}
+ if(r.locked)msg+=" "+r.locked+" of your letters "+(r.locked>1?"were":"was")+" already right, so nothing changed.";
+ pick(null);render();showPops(pops)}
+/* ---------- head to head: every letter is its own move ---------- */
+const hintCells=()=>{const c=[];for(let r=0;r<N;r++)for(let k=0;k<N;k++){if(!white(r,k)||L[r][k])continue;if(at(r,k).every(w=>w.cells.some(([x,y])=>(x!==r||y!==k)&&!L[x][y])))c.push([r,k])}return c};
+// A hint is a correct letter in an empty square, never one that would finish a word.
+function giveHint(){const c=hintCells();if(!c.length)return null;const [r,k]=c[Math.floor(Math.random()*c.length)];L[r][k]={ch:G[r][k],o:0,a:2,h:1};return[r,k]}
+function hintTick(){if(MODE!=="h2h"||!online||!online.joined||over||document.hidden)return;
+ if(document.getElementById("ovl").classList.contains("show")||chatOpen){online.act=Date.now();return}
+ if(online.pushing||online.q.length||Date.now()-online.act<5000+(online.seat?3000:0)||!hintCells().length)return;
+ online.act=Date.now();const m={hint:1};online.q.push(m);const pops=applyMove(m);PP=PP.concat(pops).slice(-8);render();showPops(pops);flushH()}
+function applyMove(m){if(m.hint){const h=giveHint();return h?[{id:nid(),by:me(),txt:"💡",o:0,r:h[0],c:h[1],k:"hn"}]:[]}
+ const P=me(),prev=L[m.r][m.c];
+ if(prev&&prev.ch===G[m.r][m.c])return[];
+ if(!canTry(m.r,m.c))return[];
+ L[m.r][m.c]={ch:m.ch,o:P,a:P};
+ return mkPops(P,settle(P,[{r:m.r,c:m.c,prev}]),[m.r,m.c])}
+function adv(r,c){const w=cur.w,n=w.cells.length,k=w.cells.findIndex(([x,y])=>x===r&&y===c);for(let j=1;j<n;j++){const q=w.cells[(k+j)%n];if(!L[q[0]][q[1]]){cur.cell=q;break}}}
+function typeH(ch){const [r,c]=cur.cell,v=L[r][c];
+ if(v&&v.ch===G[r][c]){msg="That letter is already right.";adv(r,c);return render()}
+ if(!canTry(r,c)){msg="That letter is your friend’s. It can only change once its word is full.";return render()}
+ if(v&&v.ch===ch){adv(r,c);return render()}
+ const m={r,c,ch};online.act=Date.now();online.q.push(m);const pops=applyMove(m);msg="";PP=PP.concat(pops).slice(-8);
+ adv(r,c);over=isOver();if(solved.has(cur.w)&&!over)pick(null);
+ render();showPops(pops);flushH()}
+async function flushH(){if(online.pushing)return;online.pushing=true;
+ const Q="?code="+encodeURIComponent(online.code)+"&token="+encodeURIComponent(online.token);
+ while(online.q.length){const mv=online.q.splice(0);
+  try{let done=false;
+   for(let t=0;t<5&&!done;t++){
+    const j=await call(Q,{cache:"no-store"});online.ver=j.version;applySnap(j.state,true);
+    if(over){online.q.length=0;done=true;break}
+    const pops=[];mv.forEach(m=>pops.push(...applyMove(m)));PP=PP.concat(pops).slice(-8);over=isOver();
+    const st=JSON.parse(JSON.stringify(snap()));
+    online.q.forEach(m=>applyMove(m));render();
+    try{const r=await post({action:"push",code:online.code,token:online.token,version:online.ver,state:st});online.ver=r.version;lastPopId=Math.max(lastPopId,st.pc);done=true}
+    catch(e){if(e.status!==409)throw e}}
+   if(!done)throw new Error("busy");
+   if(note){note=""}}
+  catch(e){online.q.unshift(...mv);note="Connection problem, retrying…";render();await sleep(1500)}}
+ online.pushing=false;render()}
 function showPops(l){l.forEach((p,i)=>setTimeout(()=>popover(p),80+i*250))}
-function popover(p){const b=document.querySelector('#grid button[data-r="'+p.r+'"][data-c="'+p.c+'"]');if(!b)return;const R=b.getBoundingClientRect(),d=document.createElement("div");d.className="pop p"+p.o+(p.k?" "+p.k:"");d.textContent=p.txt;d.style.left=R.right+"px";d.style.top=R.top+"px";document.body.appendChild(d);setTimeout(()=>d.remove(),1700)}
-function flash(e){const d=document.createElement("div");d.className="flash p"+e.o;d.textContent=e.txt;document.body.appendChild(d);setTimeout(()=>d.remove(),1900)}
+function popover(p){const d=document.createElement("div");d.className="pop p"+p.o+(p.k?" "+p.k:"");
+ if(p.k==="stl"){d.className+=" st";const g=document.getElementById("grid").getBoundingClientRect();
+  d.style.left=(g.left+g.width/2)+"px";d.style.top=(g.top+g.height*.3)+"px";
+  const c=document.createElement("span");c.className="sc";const a=document.createElement("small");a.textContent=(p.nm||"")+" stole "+(p.wd||[]).join(" + ");
+  const b=document.createElement("b");b.textContent=p.txt;c.append(a,b);d.appendChild(c)}
+ else{const b=document.querySelector('#grid button[data-r="'+p.r+'"][data-c="'+p.c+'"]');if(!b)return;const R=b.getBoundingClientRect();d.textContent=p.txt;d.style.left=R.right+"px";d.style.top=R.top+"px"}
+ document.body.appendChild(d);setTimeout(()=>d.remove(),p.k==="stl"?2800:1700)}
 function ask(html,btns){const o=document.getElementById("ovl"),b=document.getElementById("box");
- b.innerHTML=html+btns.map((x,i)=>'<button class="big'+(x[2]?" alt":"")+'" data-i="'+i+'">'+x[0]+"</button>").join("");o.classList.add("show");
+ b.innerHTML=html+btns.map((x,i)=>'<button class="big'+(x[2]?" alt":"")+(x[0].indexOf("<small>")>=0?" two":"")+'" data-i="'+i+'">'+x[0]+"</button>").join("");o.classList.add("show");
  b.querySelectorAll("button").forEach(el=>{el.onclick=()=>{const x=btns[+el.dataset.i];if(!x[3])o.classList.remove("show");if(x[1])x[1](el)}});
  const f=b.querySelector("button");if(f)f.focus()}
 const show=(html,label,fn)=>ask(html,[[label,fn]]);
-const rules="<p>Finish a word to score 10 + 1 per letter, or 15 + 1 per letter for a steal. Nothing is judged until you tap Submit. Wrong letters aren’t marked. When anyone fixes one, every wrong letter in that word disappears and its points are taken back. Fixing your friend’s wrong letter earns 3 points.</p>";
+const MN={three:"Three letters",word:"Full word",h2h:"Head to head"};
+function rulesHTML(){const a=MODE==="h2h"?"There are no turns. You and your friend type at the same time, and a word scores the moment its last letter goes in.":"On your turn, place "+(MODE==="word"?"as many letters as you like":"up to 3 letters")+", then tap Submit. Your letters stay private until then.";
+ return "<p style=\"color:var(--mut);margin:0\">Mode: "+MN[MODE]+"</p><ul><li>"+a+"</li><li>Finish a word to score 10 + 1 per letter.</li><li>Finish a word in your friend’s direction to steal it: 15 + 1 per letter, and the word turns your color.</li><li>Wrong letters aren’t marked, and a full word scores as if it were right.</li><li>When anyone fixes a wrong letter, every wrong letter in that word disappears and its points are taken back.</li><li>Fixing your friend’s wrong letter earns 3 points.</li><li>You can change your own letters, and your friend’s once their word is full.</li><li>"+(MODE==="h2h"?"If nobody types for about 5 seconds, a hint letter appears.":"If you both pass in a row, a hint letter appears.")+" A hint never finishes a word.</li></ul>"}
 function render(){
  const my=myTurn(),vw=viewer();left=3-pend.length;
- document.getElementById("scores").innerHTML=[0,1].map(i=>'<div class="chip p'+i+(i===turn&&!over?" on":"")+'"><div class="av">'+ICONS.svg(IC[i],54)+'</div><div class="ct"><small>'+NAMES[i]+(online&&i===online.seat?" (you)":"")+'</small><b>'+score[i]+'</b> <small class="dr">'+pd(i)+'</small>'+(i===turn&&!over?'<div class="left" aria-label="'+left+' letters left">'+"●".repeat(left)+"○".repeat(3-left)+"</div>":"")+"</div></div>").join("");
+ document.getElementById("scores").innerHTML=[0,1].map(i=>'<div class="chip p'+i+(i===turn&&!over&&MODE!=="h2h"?" on":"")+'"><div class="av">'+ICONS.svg(IC[i],54)+'</div><div class="ct"><small>'+NAMES[i]+(online&&i===online.seat?" (you)":"")+'</small><b>'+score[i]+'</b> <small class="dr">'+pd(i)+'</small>'+(i===turn&&!over&&MODE==="three"?'<div class="left" aria-label="'+left+' letters left">'+"●".repeat(left)+"○".repeat(3-left)+"</div>":"")+"</div></div>").join("");
  let h="";for(let r=0;r<N;r++)for(let c=0;c<N;c++){const k=r+","+c;
   if(!white(r,c)){h+='<div class="c k"></div>';continue}
   const v=L[r][c],pn=isP(r,c)>=0,isCur=cur&&cur.cell[0]===r&&cur.cell[1]===c,inW=cur&&cur.w.cells.some(([x,y])=>x===r&&y===c);
   const sv=at(r,c).some(w=>solved.has(w));
-  h+='<button class="c'+(v?" o"+v.o:"")+(pn?" pnd":"")+(sv&&!pn?" s":"")+(inW?" hl":"")+(isCur?" cur":"")+'" data-r="'+r+'" data-c="'+c+'" aria-label="Row '+(r+1)+", column "+(c+1)+(v?", "+v.ch:", empty")+'">'+(nums[k]?"<i>"+nums[k]+"</i>":"")+(v?v.ch:"")+"</button>"}
+  h+='<button class="c'+(v?" o"+v.o+(v.h?" hn":""):"")+(pn?" pnd":"")+(sv&&!pn?" s":"")+(inW?" hl":"")+(isCur?" cur":"")+'" data-r="'+r+'" data-c="'+c+'" aria-label="Row '+(r+1)+", column "+(c+1)+(v?", "+v.ch:", empty")+'">'+(nums[k]?"<i>"+nums[k]+"</i>":"")+(v?v.ch:"")+"</button>"}
  const g=document.getElementById("grid");g.innerHTML=h;g.querySelectorAll("button").forEach(b=>b.onclick=()=>sel(+b.dataset.r,+b.dataset.c));
  const cl=document.getElementById("clue");cl.className="p"+vw;
  cl.innerHTML=cur?'<button class="nav" aria-label="Previous word">‹</button><div><small>'+cur.w.num+" "+DN[cur.w.dir==="A"?0:1]+" · "+cur.w.cells.length+" letters</small>"+cur.w.clue+'</div><button class="nav" aria-label="Next word">›</button>':(over?"<div>Game over.</div>":"<div>No words left to try.</div>");
  if(cur){const b=cl.querySelectorAll(".nav");b[0].onclick=()=>cycle(-1);b[1].onclick=()=>cycle(1)}
  document.getElementById("msg").textContent=note||msg||(!my&&!over?"Waiting for "+NAMES[turn]+"…":"");
- const eb=document.getElementById("end");if(eb){eb.disabled=!my||over;eb.textContent="Submit"+(pend.length?" ("+pend.length+")":"")}
+ const eb=document.getElementById("end");if(eb){eb.hidden=MODE==="h2h";eb.disabled=!my||over;eb.textContent="Submit"+(pend.length?" ("+pend.length+")":"")}
  tools();
  if(over&&!overShown){overShown=true;const w=score[0]===score[1]?"It’s a tie.":NAMES[score[0]>score[1]?0:1]+" wins.";
   show("<h1>"+w+"</h1><p>"+NAMES[0]+": "+score[0]+"<br>"+NAMES[1]+": "+score[1]+"</p>","New game",()=>{location.href=location.pathname})}}
 const mc=(i,c,x)=>'<div class="mc '+(c||"")+'">'+(i||"")+(x||"")+"</div>",ty=(ch,d)=>'<b style="animation-delay:'+d+'s">'+ch+"</b>",sw=(a,b)=>'<b class="a">'+a+'</b><b class="n">'+b+"</b>";
-const TUT=[
-["Pick a square and type","<div class=\"mg\">"+mc(ty("S",.4),"cu")+mc(ty("U",1.2))+mc(ty("N",2))+mc()+mc()+"</div>","Tap a square in one of your words, then type. The pulsing square is where your next letter goes. You can place up to 3 letters a turn."],
-["Change your mind","<div class=\"mg\">"+mc("C")+mc("A")+mc(sw("R","T"))+"</div>","Tap a letter you placed and type over it, or use ⌫ to take it back. Nothing counts until you submit."],
-["Submit","<div class=\"mg\">"+mc("C")+mc("A")+mc("T",0,'<span class="mp" style="color:var(--p1)">+13</span>')+'</div><div style="text-align:center"><span class="mb">Submit</span></div>',"Tap Submit to end your turn. Words you finish score 10 + 1 per letter, and the points pop up over your last letter."],
-["Steal a word","<div class=\"mg\">"+mc("G","tint")+mc("A","tint")+mc("M","tint")+mc("E","tint",'<span class="mp st" style="color:var(--p2)">+19</span>')+"</div>","Finish a word in your friend’s direction to steal it: 15 + 1 per letter, and the whole word turns your color."],
-["Fix a mistake","<div class=\"mg\">"+mc("P")+mc(sw("X","L"))+mc("A")+mc(sw("Z",""),0,'<span class="mp ng" style="color:var(--p1)">−13</span>')+mc("E")+"</div>","Wrong letters aren’t marked. If you or your friend fix one, every wrong letter in that word disappears and the points it earned are taken back. Fixing a letter your friend got wrong earns you 3 points."],
-["Taunt","<div class=\"tt\">💬 Nice try! 😏</div>","Taunt your friend any time. Messages pop up at the top for a few seconds. Swipe one away to dismiss it."]];
-function tut(i,skip){const t=TUT[i],last=i===TUT.length-1;
- ask("<h1>"+t[0]+"</h1>"+t[1]+"<p>"+t[2]+'</p><p style="color:var(--mut);font-size:13px">'+(i+1)+" of "+TUT.length+"</p>",last?[["Got it"]]:[["Next",()=>tut(i+1,skip),0,1],[skip||"Close",null,1]])}
+const stealDemo=()=>{const cell=(t,r,c,cl)=>'<div class="mc '+cl+'" style="grid-row:'+r+';grid-column:'+c+'">'+t+"</div>",tb=(ch,n)=>'<b class="t'+n+'">'+ch+"</b>";
+ return '<div class="sg">'+cell(tb("C",1),1,4,"me")+cell("S",2,1,"ow")+cell("T",2,2,"ow")+cell("E",2,3,"ow")+cell(tb("A",2),2,4,"me")+cell("L",2,5,"ow")+cell(tb("T",3),3,4,"me")+'</div><div class="spw"><div class="sp st p0"><span class="sc"><small>Alex stole STEAL</small><b>+33</b></span></div></div>'};
+function TUTS(){const h=MODE==="h2h",lim=MODE==="three"?" You can place up to 3 letters a turn.":MODE==="word"?" Place as many letters as you like on your turn.":" There are no turns: you and your friend type at the same time.";
+ const t0=["Pick a square and type","<div class=\"mg\">"+mc(ty("S",.4),"cu")+mc(ty("U",1.2))+mc(ty("N",2))+mc()+mc()+"</div>","Tap a square in one of your words, then type. The pulsing square is where your next letter goes."+lim];
+ const chg=["Change your mind","<div class=\"mg\">"+mc("C")+mc("A")+mc(sw("R","T"))+"</div>","Tap a letter you placed and type over it, or use ⌫ to take it back. Nothing counts until you submit."];
+ const sub=["Submit","<div class=\"mg\">"+mc("C")+mc("A")+mc("T",0,'<span class="mp" style="color:var(--p1)">+13</span>')+'</div><div style="text-align:center"><span class="mb">Submit</span></div>',"Tap Submit to end your turn. Words you finish score 10 + 1 per letter, and the points pop up over your last letter."];
+ const scr=["Words score instantly","<div class=\"mg\">"+mc("C")+mc("A")+mc("T",0,'<span class="mp" style="color:var(--p1)">+13</span>')+"</div>","A word scores the moment its last letter goes in, and the points pop up over your last letter. Be quick!"];
+ const stl=["Steal a word",stealDemo(),"Finish a word in your friend’s direction to steal it: 15 + 1 per letter, and the whole word turns your color. A popover shows who stole what, with the points you just earned."];
+ const fix=["Fix a mistake","<div class=\"mg\">"+mc("P")+mc(sw("X","L"))+mc("A")+mc(sw("Z",""),0,'<span class="mp ng" style="color:var(--p1)">−13</span>')+mc("E")+"</div>","Wrong letters aren’t marked. If you or your friend fix one, every wrong letter in that word disappears and the points it earned are taken back. Fixing a letter your friend got wrong earns you 3 points."];
+ const tnt=["Taunt","<div class=\"tt\">💬 Nice try! 😏</div>","Taunt your friend any time. Messages pop up at the top for a few seconds. Swipe one away to dismiss it."];
+ return h?[t0,scr,stl,fix,tnt]:[t0,chg,sub,stl,fix,tnt]}
+function tut(i,skip){const T=TUTS(),t=T[i],last=i===T.length-1;
+ ask("<h1>"+t[0]+"</h1>"+t[1]+"<p>"+t[2]+'</p><p style="color:var(--mut);font-size:13px">'+(i+1)+" of "+T.length+"</p>",last?[["Got it"]]:[["Next",()=>tut(i+1,skip),0,1],[skip||"Close",null,1]])}
 function tutAsk(){ask("<h1>New to KleptoCross?</h1><p>A short animated tour shows every move.</p>",[["View tutorial",()=>tut(0,"Skip"),0,1],["Skip",null,1]])}
-document.getElementById("rulesb").onclick=()=>tut(0,"Close");
-function menu(){ask("<h1>KleptoCross</h1><p>Puzzle "+(pn+1)+" of "+PZ.length+". Take turns writing up to 3 letters, then tap Submit. You’ll be Player 1. One of you solves the Across clues and the other the Down clues, chosen at random.</p>"+rules,
- [["Invite a friend",()=>askName(createGame)]])}
+document.getElementById("rulesb").onclick=()=>ask("<h1>Rules</h1>"+rulesHTML(),[["Close"],["Watch tutorial",()=>tut(0,"Close"),1]]);
+const MB=(a,b)=>"<b>"+a+"</b><small>"+b+"</small>";
+const h2hNote=()=>MODE==="h2h"?'<p style="color:var(--mut);font-size:13px">Head to head note: the game can only go as fast as the slower of your two connections.</p>':"";
+const goTxt=()=>MODE==="h2h"?"You both type at the same time.":(online.seat===0?"You go first.":NAMES[0]+" goes first, and the board updates when it’s your turn.");
+function startMode(m){MODE=m;
+ if(m==="h2h")ask("<h1>Head to head</h1><p>There are no turns. You and your friend type at the same time, and every word scores the moment it’s finished.</p><p><b>Heads up:</b> the game can only go as fast as the slower of your two connections, so a weak signal on one phone can slow things down for both of you.</p>",[["Continue",()=>askName(createGame)],["Back",menu,1]]);
+ else askName(createGame)}
+function menu(){ask("<h1>KleptoCross</h1><p>Puzzle "+(pn+1)+" of "+PZ.length+". You’ll be Player 1. One of you solves the Across clues and the other the Down clues, chosen at random. Pick a game mode:</p>",
+ [[MB("Three letters","Up to 3 letters a turn. More strategy."),()=>startMode("three")],
+  [MB("Full word","Place as many letters as you like on your turn."),()=>startMode("word")],
+  [MB("Head to head","No turns. You both type at once. More speed."),()=>startMode("h2h")]])}
 
 /* ---------- two-phone play ---------- */
 const sleep=ms=>new Promise(r=>setTimeout(r,ms));
 async function call(q,opt){const r=await fetch(API+q,opt);let j={};try{j=await r.json()}catch(e){}if(!r.ok){const e=new Error(j.error||"http "+r.status);e.status=r.status;throw e}return j}
 const post=b=>call("",{method:"POST",headers:{"content-type":"application/json"},body:JSON.stringify(b)});
 const saved={get(c){try{return JSON.parse(localStorage.getItem("cd-"+c))}catch(e){return null}},set(c,v){try{localStorage.setItem("cd-"+c,JSON.stringify(v))}catch(e){}}};
-const snap=()=>({L,turn,left:3,score,solved:[...solved].map(s=>slots.indexOf(s)),award,dir:DIR,ic:IC,over,msg,ev,pops:PP});
+const snap=()=>({L,turn,left:3,score,solved:[...solved].map(s=>slots.indexOf(s)),award,dir:DIR,ic:IC,over,msg:MODE==="h2h"?"":msg,pops:PP,mode:MODE,pc:PC,ps:PS});
 function applySnap(s,loud){const k=cur?{i:slots.indexOf(cur.w),cell:cur.cell}:null;
- DIR=s.dir||["A","D"];IC=s.ic||[0,1];setNames();award=s.award||Array(slots.length).fill(null);
- PP=s.pops||[];const mx=PP.reduce((m,p)=>Math.max(m,p.id),0);if(loud&&mx>lastPopId)showPops(PP.filter(p=>p.id>lastPopId));lastPopId=Math.max(lastPopId,mx);
- ev=s.ev||null;if(ev){if(loud&&ev.id!==lastEv)flash(ev);lastEv=ev.id}
+ MODE=s.mode||"three";PC=s.pc||0;PS=s.ps||0;DIR=s.dir||["A","D"];IC=s.ic||[0,1];setNames();award=s.award||Array(slots.length).fill(null);
+ PP=s.pops||[];const mx=PP.reduce((m,p)=>Math.max(m,p.id),0);if(loud&&mx>lastPopId)showPops(PP.filter(p=>p.id>lastPopId&&!(online&&p.by===online.seat)));lastPopId=Math.max(lastPopId,mx);
  L=s.L;turn=s.turn;left=3;score=s.score;solved=new Set(s.solved.map(i=>slots[i]));over=s.over;msg=s.msg||"";pend=[];
  if(k&&k.i>=0&&!over)cur={w:slots[k.i],cell:k.cell};else{cur=null;if(!over)pick(null)}}
 const link=()=>location.origin+location.pathname+"?game="+online.code;
@@ -252,18 +340,19 @@ async function flush(){online.pushing=true;
   try{const j=await post({action:"push",code:online.code,token:online.token,version:online.ver,state:snap()});online.ver=j.version;if(note){note="";render()}}
   catch(e){if(e.status===409||e.status===403){try{await pollOnce(true)}catch(x){}}else{online.dirty=true;note="Connection problem, retrying…";render();await sleep(1500)}}}
  online.pushing=false}
+function pingNow(){if(Date.now()-lastInput>=180000)return false;if(MODE==="h2h"){if(Date.now()-lastPingAt<15000)return false;lastPingAt=Date.now()}return true}
 async function pollOnce(force){if(!online)return;
- const q="?code="+encodeURIComponent(online.code)+"&token="+encodeURIComponent(online.token)+(Date.now()-lastInput<180000?"&ping=1":"")+(online.joined?"&since="+Math.max(0,online.since-5000):"");
+ const q="?code="+encodeURIComponent(online.code)+"&token="+encodeURIComponent(online.token)+(pingNow()?"&ping=1":"")+(online.joined?"&since="+Math.max(0,online.since-5000):"");
  const j=await call(q,{cache:"no-store"});
  if(j.names&&(j.names[0]!==PN[0]||j.names[1]!==PN[1])){PN=j.names;setNames();render()}
  if(j.chat)addMsgs(j.chat);
  if(note){note="";render()}
- if(!online.joined&&j.joined){online.joined=true;ask("<h1>Your friend joined!</h1>"+ICONS.card(IC[online.seat],110)+"<p>You play <b>"+pd(online.seat)+"</b>. "+(online.seat===0?"You go first.":NAMES[0]+" goes first, and the board updates when it’s your turn.")+"</p>"+rules,[["Start",()=>{render();tutAsk()}]])}
- if(j.version>online.ver&&(force||turn!==online.seat)){const prev=turn;online.ver=j.version;applySnap(j.state,true);render();
+ if(!online.joined&&j.joined){online.joined=true;ask("<h1>Your friend joined!</h1>"+ICONS.card(IC[online.seat],110)+"<p>Mode: <b>"+MN[MODE]+"</b>. You play <b>"+pd(online.seat)+"</b>. "+goTxt()+"</p>"+h2hNote(),[["Start",()=>{render();tutAsk()}]])}
+ if(j.version>online.ver&&(force||MODE==="h2h"||turn!==online.seat)&&!(MODE==="h2h"&&(online.pushing||online.q.length))){const prev=turn;online.ver=j.version;online.act=Date.now();applySnap(j.state,true);render();
   if(!over&&prev!==turn&&turn===online.seat)show("<h1>Your turn</h1><p>"+(msg?msg+"<br><br>":"")+"You play <b>"+pd(turn)+"</b>.</p>","Start my turn",()=>render())}}
-function loop(){clearInterval(timer);timer=setInterval(()=>{if(online&&!document.hidden&&!online.pushing&&(!over||chatOpen))pollOnce().catch(()=>{})},4000)}
+function loop(){clearInterval(timer);timer=setInterval(()=>{if(online&&!document.hidden&&!online.pushing&&(!over||chatOpen)&&(MODE!=="h2h"||Date.now()-lastInput<180000))pollOnce().catch(()=>{})},MODE==="h2h"?1500:4000)}
 document.addEventListener("visibilitychange",()=>{if(online&&!document.hidden&&!over)pollOnce().catch(()=>{})});
-function waitScreen(){ask('<h1>Invite a friend</h1>'+ICONS.card(IC[online.seat],110)+'<p>Send this link to a friend. When they open it, the game begins. You are Player 1 and play <b>'+pd(online.seat)+'</b>'+' and go first.'+'</p><b id="lk"></b>',
+function waitScreen(){ask('<h1>Invite a friend</h1>'+ICONS.card(IC[online.seat],110)+'<p>Send this link to a friend. When they open it, the game begins. Mode: <b>'+MN[MODE]+'</b>. You are Player 1 and play <b>'+pd(online.seat)+'</b>'+(MODE==="h2h"?'. You both type at the same time.':' and go first.')+'</p><b id="lk"></b>',
  [["Share link",async el=>{const u=link();try{if(navigator.share){await navigator.share({title:"KleptoCross",text:"Join me for a crossword duel!",url:u});return}}catch(e){if(e&&e.name==="AbortError")return}
    try{await navigator.clipboard.writeText(u);el.textContent="Link copied ✓"}catch(e){el.textContent="Copy the link above"}},0,1],
   ["Cancel",()=>{location.href=location.pathname},1]]);
@@ -271,27 +360,27 @@ function waitScreen(){ask('<h1>Invite a friend</h1>'+ICONS.card(IC[online.seat],
 const keep=()=>{try{history.replaceState(null,"","?game="+online.code+"&k="+online.token)}catch(e){}};
 async function createGame(){
  try{DIR=Math.random()<.5?["A","D"]:["D","A"];IC=ICONS.pick2();setNames();start();const j=await post({action:"create",pz:pn,state:snap(),name:MYN});PN=[MYN,""];setNames();
-  online={code:j.code,token:j.token,seat:j.seat,ver:j.version,joined:false,pushing:false,dirty:false,alerts:false,since:0};saved.set(j.code,{token:j.token,seat:j.seat});
+  online={code:j.code,token:j.token,seat:j.seat,ver:j.version,joined:false,pushing:false,dirty:false,alerts:false,since:0,q:[],act:Date.now()};saved.set(j.code,{token:j.token,seat:j.seat});
   keep();render();waitScreen();loop();ping();autoAlerts()}
  catch(e){online=null;ask("<h1>Couldn’t start</h1><p>The game server didn’t answer. Check your connection and try again.</p>",[["Back",menu]])}}
 async function joinGame(code,kt){let me=saved.get(code);
  try{
   if(kt){const j=await call("?code="+code+"&token="+encodeURIComponent(kt),{cache:"no-store"});if(j.seat===0||j.seat===1){me={token:kt,seat:j.seat};saved.set(code,me)}}
   if(me&&me.token){const j=await call("?code="+code,{cache:"no-store"});build(j.pz);
-   online={code,token:me.token,seat:me.seat,ver:j.version,joined:j.joined,pushing:false,dirty:false,alerts:false,since:0};PN=j.names||["",""];applySnap(j.state);keep();render();loop();ping();autoAlerts();
-   if(!j.joined)waitScreen();else if(!over)show("<h1>Welcome back</h1><p>You play <b>"+pd(online.seat)+"</b>."+(myTurn()?" It’s your turn.":" Waiting for "+NAMES[turn]+".")+"</p>","Continue",()=>render());
+   online={code,token:me.token,seat:me.seat,ver:j.version,joined:j.joined,pushing:false,dirty:false,alerts:false,since:0,q:[],act:Date.now()};PN=j.names||["",""];applySnap(j.state);keep();render();loop();ping();autoAlerts();
+   if(!j.joined)waitScreen();else if(!over)show("<h1>Welcome back</h1><p>You play <b>"+pd(online.seat)+"</b>."+(MODE==="h2h"?" Mode: "+MN[MODE]+".":myTurn()?" It’s your turn.":" Waiting for "+NAMES[turn]+".")+"</p>","Continue",()=>render());
    return}
   const j=await post({action:"join",code,name:MYN});build(j.pz);
-  online={code,token:j.token,seat:j.seat,ver:j.version,joined:true,pushing:false,dirty:false,alerts:false,since:0};saved.set(code,{token:j.token,seat:j.seat});
+  online={code,token:j.token,seat:j.seat,ver:j.version,joined:true,pushing:false,dirty:false,alerts:false,since:0,q:[],act:Date.now()};saved.set(code,{token:j.token,seat:j.seat});
   PN=j.names||["",""];applySnap(j.state);keep();render();loop();ping();autoAlerts();
-  show("<h1>You’re in!</h1>"+ICONS.card(IC[online.seat],110)+"<p>You play <b>"+pd(online.seat)+"</b>. "+(myTurn()?"You go first.":NAMES[0]+" goes first, and the board updates when it’s your turn.")+"</p>"+rules,"OK",()=>{render();tutAsk()})}
+  show("<h1>You’re in!</h1>"+ICONS.card(IC[online.seat],110)+"<p>Mode: <b>"+MN[MODE]+"</b>. You play <b>"+pd(online.seat)+"</b>. "+goTxt()+"</p>"+h2hNote(),"OK",()=>{render();tutAsk()})}
  catch(e){online=null;ask("<h1>Can’t join</h1><p>"+(e.status===409?"This game already has two players.":e.status===404?"That game wasn’t found. Ask your friend for a new link.":"The game server didn’t answer. Try again in a moment.")+"</p>",[["Back to start",()=>{location.href=location.pathname}]])}}
 
 /* ---------- turn alerts ---------- */
 // "I'm here" signal: sent only while the page is visible and touched in the last 3 minutes.
 // The server skips the alert while these keep arriving, and sends one when they stop.
 let lastInput=Date.now();
-["pointerdown","keydown"].forEach(t=>document.addEventListener(t,()=>{lastInput=Date.now()},{passive:true}));
+["pointerdown","keydown"].forEach(t=>document.addEventListener(t,()=>{const idle=Date.now()-lastInput>=180000;lastInput=Date.now();if(idle&&online&&!over&&MODE==="h2h")pollOnce().catch(()=>{})},{passive:true}));
 function ping(){if(online)pollOnce().catch(()=>{})}
 const pushOK=()=>"serviceWorker" in navigator&&"PushManager" in window&&"Notification" in window;
 const b64u=t=>{const p="=".repeat((4-t.length%4)%4),r=atob((t+p).replace(/-/g,"+").replace(/_/g,"/"));return Uint8Array.from(r,c=>c.charCodeAt(0))};
@@ -335,6 +424,7 @@ async function sendChat(){const i=document.getElementById("chi"),t=(i.value||"")
 document.getElementById("chatb").onclick=openChat;document.getElementById("chx").onclick=closeChat;document.getElementById("chs").onclick=sendChat;
 document.getElementById("chi").addEventListener("keydown",e=>{if(e.key==="Enter"){e.preventDefault();sendChat()}});
 
+setInterval(hintTick,1000);
 const kb=document.getElementById("kb");
 kb.innerHTML=["QWERTYUIOP","ASDFGHJKL","ZXCVBNM"].map((r,i)=>'<div class="row">'+[...r].map(x=>'<button class="k" data-k="'+x+'">'+x+"</button>").join("")+(i===2?'<button class="k w" data-k="⌫" aria-label="Undo letter">⌫</button>':"")+"</div>").join("")+'<button id="end">Submit</button>';
 kb.onclick=e=>{const b=e.target.closest("button");if(!b)return;if(b.id==="end"){submit();return}const k=b.dataset.k;if(k==="⌫")back();else type(k)};
