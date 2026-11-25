@@ -1,4 +1,4 @@
-// Crossword Duel: tiny game server. Keeps one record per game and hands it to both phones.
+// KleptoCross: tiny game server. Keeps one record per game and hands it to both phones.
 import { store as getStore, getVapid, validSub } from "../shared/push.mjs";
 
 const CHARS = "ABCDEFGHJKMNPQRSTUVWXYZ23456789"; // no look-alike characters
@@ -33,13 +33,17 @@ function validState(s) {
   if (!Array.isArray(s.solved) || s.solved.length > 60) return false;
   if (!s.solved.every((n) => Number.isInteger(n) && n >= 0 && n < 100)) return false;
   if (typeof s.over !== "boolean") return false;
+  if (s.mode !== undefined && !["three", "word", "h2h"].includes(s.mode)) return false;
+  if (s.pc !== undefined && !(Number.isInteger(s.pc) && s.pc >= 0 && s.pc < 1000000)) return false;
   if (s.msg !== undefined && (typeof s.msg !== "string" || s.msg.length > 300)) return false;
   return true;
 }
 
 // What a phone is allowed to see (never the secret tokens).
+const cleanName = (n) => String(n || "").replace(/[\u0000-\u001f\u007f<>&"]/g, " ").replace(/\s+/g, " ").trim().slice(0, 16);
 const publicView = (g) => ({
   version: g.version,
+  names: g.names || ["", ""],
   joined: !!(g.seats[0] && g.seats[1]),
   pz: g.pz,
   state: g.state,
@@ -80,9 +84,10 @@ export default async (req) => {
       let code = makeCode();
       for (let i = 0; i < 5 && (await store.get(code)); i++) code = makeCode();
       const token = crypto.randomUUID();
-      const hostSeat = Math.random() < 0.5 ? 0 : 1; // random: host plays Across (0) or Down (1)
+      const hostSeat = 0; // the inviter is always Player 1; Across/Down is chosen at random in the game itself
       const seats = [null, null]; seats[hostSeat] = token;
-      const g = { version: 1, created: Date.now(), pz: body.pz, seats, state: body.state };
+      const names = ["", ""]; names[hostSeat] = cleanName(body.name);
+      const g = { version: 1, created: Date.now(), pz: body.pz, seats, names, state: body.state };
       await store.setJSON(code, g);
       await seenStore.set(code + ":" + hostSeat, String(Date.now()));
       return json({ code, token, seat: hostSeat, version: g.version });
@@ -98,6 +103,7 @@ export default async (req) => {
       const token = crypto.randomUUID();
       const seat = g.seats[0] ? 1 : 0;
       g.seats[seat] = token;
+      g.names = g.names || ["", ""]; g.names[seat] = cleanName(body.name);
       await store.setJSON(code, g);
       await seenStore.set(code + ":" + seat, String(Date.now()));
       return json({ token, seat, ...publicView(g) });
@@ -106,11 +112,13 @@ export default async (req) => {
     if (body.action === "push") {
       const seat = g.seats.indexOf(body.token);
       if (seat === -1 || !body.token) return json({ error: "not a player" }, 403);
-      if (g.state.turn !== seat) return json({ error: "not your turn" }, 403);
+      const h2h = g.state.mode === "h2h"; // head to head: no turns, either player may push
+      if (!h2h && g.state.turn !== seat) return json({ error: "not your turn" }, 403);
       if (g.state.over) return json({ error: "game over" }, 409);
       if (body.version !== g.version) return json({ error: "out of date" }, 409);
       if (!validState(body.state)) return json({ error: "bad state" }, 400);
-      const turnPassed = body.state.turn !== g.state.turn;
+      if ((body.state.mode || "three") !== (g.state.mode || "three")) return json({ error: "bad state" }, 400);
+      const turnPassed = !h2h && body.state.turn !== g.state.turn;
       g.state = body.state;
       g.version += 1;
       await store.setJSON(code, g);
